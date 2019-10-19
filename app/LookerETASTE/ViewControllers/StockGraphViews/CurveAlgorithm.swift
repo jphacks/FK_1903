@@ -63,11 +63,8 @@ class CurveAlgorithm {
         
         var curveSegments: [CurvedSegment] = []
         curveSegments = controlPointsFrom(points: dataPoints)
-        
         for i in 1..<dataPoints.count {
             path.addCurve(to: dataPoints[i], controlPoint1: curveSegments[i-1].controlPoint1, controlPoint2: curveSegments[i-1].controlPoint2)
-            print("path.currentPoint : ", path.currentPoint)
-            print("path.cgPath.pathElements : ", path.cgPath.pathElements)
         }
         
         return path

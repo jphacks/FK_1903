@@ -22,10 +22,15 @@ extension PointEntry: Comparable {
     }
 }
 
+protocol LineChartDelegate {
+    func didRecieveDotsPoints(lineChart: LineChart, dotsPoints: [CGPoint])
+}
+
 class LineChart: UIView {
+    var delegate: LineChartDelegate?
     
     /// gap between each point
-    let lineGap: CGFloat = 60.0
+    var lineGap: CGFloat = 60.0
     
     /// preseved space at top of the chart
     let topSpace: CGFloat = 40.0
@@ -42,7 +47,7 @@ class LineChart: UIView {
     var animateDots: Bool = false
 
     /// Active or desactive dots
-    var showDots: Bool = false
+    var showDots: Bool = true
 
     /// Dot inner Radius
     var innerRadius: CGFloat = 8
@@ -55,6 +60,9 @@ class LineChart: UIView {
             self.setNeedsLayout()
         }
     }
+    
+    // 追記
+    var dotsPoints: [CGPoint] = []
     
     /// Contains the main line which represents the data
     private let dataLayer: CALayer = CALayer()
@@ -127,7 +135,8 @@ class LineChart: UIView {
     /**
      Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
      */
-    private func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
+    
+    func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
         if let max = entries.max()?.value,
             let min = entries.min()?.value {
             
@@ -156,6 +165,7 @@ class LineChart: UIView {
             lineLayer.path = path.cgPath
             lineLayer.strokeColor = UIColor.lookerBlue.cgColor
             lineLayer.fillColor = UIColor.clear.cgColor
+            lineLayer.lineWidth = 5
             dataLayer.addSublayer(lineLayer)
         }
     }
@@ -315,7 +325,8 @@ class LineChart: UIView {
         if let dataPoints = dataPoints {
             for dataPoint in dataPoints {
                 let xValue = dataPoint.x - outerRadius/2
-                let yValue = (dataPoint.y + lineGap) - (outerRadius * 2)
+                let yValue = (dataPoint.y + lineGap) - (outerRadius * 2)// + 18 // なぜかlineGap変えると縦軸もずれる
+                dotsPoints.append(CGPoint(x: xValue, y: yValue))
                 let dotLayer = DotCALayer()
                 dotLayer.dotInnerColor = UIColor.white
                 dotLayer.innerRadius = innerRadius
@@ -334,6 +345,8 @@ class LineChart: UIView {
                     dotLayer.add(anim, forKey: "opacity")
                 }
             }
+            //
+            self.delegate?.didRecieveDotsPoints(lineChart: self, dotsPoints: dotsPoints)
         }
     }
 }

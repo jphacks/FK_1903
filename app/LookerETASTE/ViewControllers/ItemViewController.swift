@@ -16,6 +16,7 @@ class ItemViewController: UIViewController{
     @IBOutlet weak var sellPriceLabel: UILabel!
     
     var node: SCNNode!
+    var stockGraphDotsPoints: [CGPoint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,16 +79,21 @@ extension ItemViewController {
 
 
 // 株価グラフ機能
-extension ItemViewController {
+extension ItemViewController: LineChartDelegate {
+    func didRecieveDotsPoints(lineChart: LineChart, dotsPoints: [CGPoint]) {
+        stockGraphDotsPoints = dotsPoints
+    }
+    
     func initializeStockGraphView() {
         let nib = UINib(nibName: "StockGraphView", bundle: nil)
         let stockGraphView = nib.instantiate(withOwner: nil, options: nil)[0] as! StockGraphView
         
         // 決め打ちのデータ
-        let dataEntries = [PointEntry(value: 0, label: ""), PointEntry(value: 100, label: ""), PointEntry(value: 100, label: ""), PointEntry(value: 100, label: ""), PointEntry(value: 20, label: ""), PointEntry(value: 30, label: ""), PointEntry(value: 100, label: "")]
+        let dataEntries = [PointEntry(value: 0, label: "0"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 20, label: "20"), PointEntry(value: 30, label: "30"), PointEntry(value: 100, label: "100")]
         
         stockGraphView.curvedLineChart.dataEntries = dataEntries
         stockGraphView.curvedLineChart.isCurved = true
+        stockGraphView.curvedLineChart.lineGap = 60
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.panStockGraphView(sender:)))
         stockGraphView.addGestureRecognizer(panGestureRecognizer)
         stockGraphView.weeklyTabTapped = { [weak self] in
@@ -103,7 +109,7 @@ extension ItemViewController {
         stockGraphView.tabsSetup()
         stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
         self.view.addSubview(stockGraphView)
-        
+        stockGraphView.curvedLineChart.delegate = self
     }
     
     @objc func panStockGraphView(sender: UIPanGestureRecognizer) {
