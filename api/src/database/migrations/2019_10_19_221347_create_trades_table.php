@@ -15,6 +15,11 @@ class CreateTradesTable extends Migration
     {
         Schema::create('trades', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('sneaker_id');
+            $table->foreign('sneaker_id')->references('id')->on('sneakers');
+            $table->double('size');
+            $table->integer('price');
+            $table->string('trade_date');
             $table->timestamps();
         });
     }
