@@ -20,3 +20,7 @@ Route::get('/sneaker/lowest', 'Api\SneakersController@lowest');
 Route::get('/sneaker/highest', 'Api\SneakersController@highest');
 Route::get('/sneaker/{id}', 'Api\SneakersController@show');
 Route::delete('/sneaker/{id}', 'Api\SneakersController@destroy');
+
+Route::post('/trade', 'Api\TradesController@store');
+Route::get('/trade/{id}', 'Api\TradesController@show');
+Route::get('/trade/size/{id}', 'Api\TradesController@showSize');
