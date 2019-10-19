@@ -18,6 +18,8 @@ class ItemViewController: UIViewController{
     var node: SCNNode!
     var stockGraphDotsPoints: [CGPoint] = []
     
+    var stockGraphView: StockGraphView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,8 +88,8 @@ extension ItemViewController: LineChartDelegate {
     
     func initializeStockGraphView() {
         let nib = UINib(nibName: "StockGraphView", bundle: nil)
-        let stockGraphView = nib.instantiate(withOwner: nil, options: nil)[0] as! StockGraphView
-        
+        stockGraphView = nib.instantiate(withOwner: nil, options: nil)[0] as? StockGraphView
+        stockGraphView.curvedLineChart.delegate = self
         // 決め打ちのデータ
         let dataEntries = [PointEntry(value: 0, label: "0"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 20, label: "20"), PointEntry(value: 30, label: "30"), PointEntry(value: 100, label: "100")]
         
@@ -109,18 +111,37 @@ extension ItemViewController: LineChartDelegate {
         stockGraphView.tabsSetup()
         stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
         self.view.addSubview(stockGraphView)
-        stockGraphView.curvedLineChart.delegate = self
+        self.view.bringSubviewToFront(stockGraphView.line)
+        
+        print("stockGraphView.frame.origin.x : ", stockGraphView.frame.origin.x)
     }
-    
+
     @objc func panStockGraphView(sender: UIPanGestureRecognizer) {
         switch sender.state {
+        case .began:
+            stockGraphView.line.isHidden = false
+            stockGraphView.lineLeftConstraint.constant = getNearestPoint(touchPoint: sender.location(in: view), points: stockGraphDotsPoints).x + stockGraphView.frame.origin.x + stockGraphView.curvedLineChartLeftConstraint.constant
         case .changed:
-            break
+            stockGraphView.lineLeftConstraint.constant = getNearestPoint(touchPoint: sender.location(in: view), points: stockGraphDotsPoints).x + stockGraphView.frame.origin.x + stockGraphView.curvedLineChartLeftConstraint.constant
         case .ended:
-            break
+            stockGraphView.line.isHidden = true
         default:
             break
         }
+    }
+    
+    func getNearestPoint(touchPoint: CGPoint, points: [CGPoint]) -> CGPoint {
+        var nearestPoint: CGPoint?
+        var mindiff: CGFloat = 10000
+        // xのみ見るけど返すのはCGPoint
+        for point in points {
+            let diff = abs(point.x - touchPoint.x)
+            if diff <= mindiff {
+                nearestPoint = point
+                mindiff = diff
+            }
+        }
+        return nearestPoint!
     }
 
 }

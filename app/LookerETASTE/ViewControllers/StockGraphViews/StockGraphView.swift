@@ -14,10 +14,17 @@ class StockGraphView: UIView {
     @IBOutlet weak var weeklyTab: UIView!
     @IBOutlet weak var monthlyTab: UIView!
     @IBOutlet weak var threeMonthlyTab: UIView!
+    @IBOutlet weak var line: UIView!
+    @IBOutlet weak var lineLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var curvedLineChartLeftConstraint: NSLayoutConstraint!
     
     var weeklyTabTapped: (() -> ())?
     var monthlyTabTapped: (() -> ())?
     var threeMonthlyTabTapped: (() -> ())?
+    
+    func lineSetup() {
+        line.isHidden = true
+    }
     
     func tabsSetup() {
         weeklyTab.layer.cornerRadius = 10

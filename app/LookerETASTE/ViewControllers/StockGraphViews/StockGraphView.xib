@@ -109,15 +109,25 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLH-KK-gzh" userLabel="Line">
+                    <rect key="frame" x="0.0" y="65" width="1" height="300"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="ti6-fG-rJK"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="htI-IE-PFE" firstAttribute="centerY" secondItem="FIf-EB-y83" secondAttribute="centerY" id="29h-uE-pV4"/>
                 <constraint firstItem="V99-Ky-sAH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2XN-PN-s5B"/>
                 <constraint firstItem="C3C-2w-xD0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="6C8-AD-1Wu"/>
                 <constraint firstItem="LtF-te-45m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="A8D-En-xEZ"/>
+                <constraint firstItem="XLH-KK-gzh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ABu-So-XXY"/>
                 <constraint firstItem="FIf-EB-y83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="F03-oW-3mi"/>
+                <constraint firstItem="C3C-2w-xD0" firstAttribute="bottom" secondItem="XLH-KK-gzh" secondAttribute="bottom" id="IJV-Dp-q3l"/>
                 <constraint firstItem="G6g-1Q-V3A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J5G-QE-h4g"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="C3C-2w-xD0" secondAttribute="trailing" constant="15" id="Kim-WK-wt6"/>
+                <constraint firstItem="XLH-KK-gzh" firstAttribute="top" secondItem="C3C-2w-xD0" secondAttribute="top" id="LWL-YI-XGz"/>
                 <constraint firstItem="IsN-m7-sAO" firstAttribute="leading" secondItem="FIf-EB-y83" secondAttribute="trailing" constant="54" id="M02-Ou-INf"/>
                 <constraint firstItem="V99-Ky-sAH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="POi-jl-pHX"/>
                 <constraint firstItem="C3C-2w-xD0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="RCD-LB-Pm9"/>
@@ -135,6 +145,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="curvedLineChart" destination="C3C-2w-xD0" id="Nlf-5T-nFC"/>
+                <outlet property="curvedLineChartLeftConstraint" destination="6C8-AD-1Wu" id="p7l-Wp-Pxr"/>
+                <outlet property="line" destination="XLH-KK-gzh" id="a9j-Vj-tp6"/>
+                <outlet property="lineLeftConstraint" destination="ABu-So-XXY" id="dGk-L4-0Gc"/>
                 <outlet property="monthlyTab" destination="G6g-1Q-V3A" id="G33-4a-Cpx"/>
                 <outlet property="threeMonthlyTab" destination="E5t-VZ-sxn" id="afr-sG-Knn"/>
                 <outlet property="weeklyTab" destination="LtF-te-45m" id="Q4t-JD-mXy"/>
