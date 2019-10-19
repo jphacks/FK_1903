@@ -25,6 +25,7 @@ class StockGraphView: UIView {
     var weeklyTabTapped: (() -> ())?
     var monthlyTabTapped: (() -> ())?
     var threeMonthlyTabTapped: (() -> ())?
+    var flipButtonTapped: (() -> ())?
     
     func pointerSetup() {
         line.isHidden = true
@@ -74,4 +75,9 @@ class StockGraphView: UIView {
         
         threeMonthlyTabTapped?()
     }
+    
+    @IBAction func tapFlipButton(_ sender: UIButton) {
+        flipButtonTapped?()
+    }
+    
 }

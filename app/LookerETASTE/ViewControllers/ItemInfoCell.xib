@@ -124,6 +124,9 @@
                     <rect key="frame" x="320" y="577" width="57" height="57"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="yajirushi"/>
+                    <connections>
+                        <action selector="tapFlipButton:" destination="-1" eventType="touchUpInside" id="ObN-3e-fuA"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥100,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2e-ju-9r6">
                     <rect key="frame" x="106" y="440" width="168" height="36"/>

@@ -19,7 +19,11 @@ class ItemViewController: UIViewController{
     var dataEntries: [PointEntry] = []
     var stockGraphDotsPoints: [CGPoint] = []
     
+    var isFrontItemInfo = true
+    
+    var itemXibView: ItemInfoCell!
     var stockGraphView: StockGraphView!
+    let flipDuration = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +34,29 @@ class ItemViewController: UIViewController{
         
         self.title = "Item"
         
-        
-        let itemXibView = ItemInfoCell(frame: CGRect(x: 20, y: 200, width: 375, height: 631))
+        initializeItemInfoView()
+        //initializeSceneView()
+        initializeStockGraphView()
+    }
+    
+    func initializeItemInfoView() {
+        itemXibView = ItemInfoCell(frame: CGRect(x: 20, y: 200, width: 375, height: 631))
         
         //itemLabelテスト用
         itemXibView.tradePriceLavel.text =  "¥" + "200,000"
         itemXibView.discountPriceLabel.textColor = UIColor.red
         
-        view.addSubview(itemXibView)
+        itemXibView.tappedFlipButton = {
+            UIView.transition(with: self.itemXibView, duration: self.flipDuration, options: [.transitionFlipFromRight], animations: nil, completion: nil)
+            UIView.transition(with: self.stockGraphView, duration: self.flipDuration, options: [.transitionFlipFromRight], animations: nil, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.flipDuration / 2) {
+                self.itemXibView.isHidden = !self.isFrontItemInfo
+                self.stockGraphView.isHidden = self.isFrontItemInfo
+            }
+            self.isFrontItemInfo.toggle()
+        }
         
-        //initializeSceneView()
-        //initializeStockGraphView()
+        view.addSubview(itemXibView)
     }
     
     
@@ -119,11 +135,23 @@ extension ItemViewController: LineChartDelegate {
         stockGraphView.threeMonthlyTabTapped = { [weak self] in
             print("threeMonthlyTabTapped")
         }
+        stockGraphView.flipButtonTapped = { [weak self] in
+            UIView.transition(with: self!.itemXibView, duration: self!.flipDuration, options: [.transitionFlipFromRight], animations: nil, completion: nil)
+            UIView.transition(with: self!.stockGraphView, duration: self!.flipDuration, options: [.transitionFlipFromRight], animations: nil, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self!.flipDuration / 2) {
+                self!.itemXibView.isHidden = !self!.isFrontItemInfo
+                self!.stockGraphView.isHidden = self!.isFrontItemInfo
+            }
+            self!.isFrontItemInfo.toggle()
+        }
         
         stockGraphView.tabsSetup()
-        stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
+        //stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
+        stockGraphView.center = CGPoint(x: itemXibView.frame.origin.x + itemXibView.frame.size.width / 2, y: itemXibView.frame.origin.y + itemXibView.frame.size.height / 2)
         self.view.addSubview(stockGraphView)
         self.view.bringSubviewToFront(stockGraphView.line)
+        
+        stockGraphView.isHidden = true // 反転のため
     }
 
     @objc func panStockGraphView(sender: UIPanGestureRecognizer) {
