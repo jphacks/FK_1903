@@ -44,7 +44,7 @@ GET {{baseUrl}}/sneaker/highest HTTP/1.1
 
 ###
 
-GET {{baseUrl}}/sneaker/1 HTTP/1.1
+GET {{baseUrl}}/sneaker/10 HTTP/1.1
 
 ###
 
