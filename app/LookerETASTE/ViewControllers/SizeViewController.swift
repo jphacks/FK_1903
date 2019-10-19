@@ -11,4 +11,10 @@ import UIKit
 
 class SizeViewController: UIViewController{
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+            
+            self.title = "Slect Size"
+            
+    }
 }

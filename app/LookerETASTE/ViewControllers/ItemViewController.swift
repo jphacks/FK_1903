@@ -11,17 +11,28 @@ import UIKit
 
 class ItemViewController: UIViewController{
     
-    @IBOutlet weak var buyButton: UILabel!
-    @IBOutlet weak var sealButton: UILabel!
+    
+    @IBOutlet weak var buyPriceLabel: UILabel!
+    @IBOutlet weak var sellPriceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buyButton.text = "¥10,000"
-        sealButton.text = "¥10,000"
+        buyPriceLabel.text = "¥10,000"
+        sellPriceLabel.text = "¥10,000"
         
         self.title = "Item"
         
     }
+    
+    @IBAction func toSellViewButton(_ sender: Any) {
+        
+        let sizeViewControllerStoryboard = UIStoryboard(name: "SizeViewController", bundle: nil)
+        let sizeViewController = sizeViewControllerStoryboard.instantiateInitialViewController() as! SizeViewController
+        sizeViewController.modalPresentationStyle = .overFullScreen
+        self.navigationController!.pushViewController(sizeViewController, animated: true)
+        
+    }
+    
     
 }
