@@ -18,6 +18,8 @@
 		4F11440D235B135400198E7C /* UIColor_Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11440C235B135400198E7C /* UIColor_Utility.swift */; };
 		4F11440F235B13DA00198E7C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11440E235B13DA00198E7C /* Color.swift */; };
 		4F114411235B33C400198E7C /* CGPath_Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114410235B33C400198E7C /* CGPath_Utility.swift */; };
+		4FA1B9D2235BCD6000A53271 /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */; };
+		4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */; };
 		CBC20B402359A3B20078F2D1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */; };
 		CBFEF3CC2358E29B00F0CEAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */; };
 		CBFEF3CE2358E29B00F0CEAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEF3CD2358E29B00F0CEAC /* SceneDelegate.swift */; };
@@ -44,6 +46,8 @@
 		4F11440C235B135400198E7C /* UIColor_Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Utility.swift; sourceTree = "<group>"; };
 		4F11440E235B13DA00198E7C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4F114410235B33C400198E7C /* CGPath_Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPath_Utility.swift; sourceTree = "<group>"; };
+		4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
+		4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemInfoCell.xib; sourceTree = "<group>"; };
 		CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		CBFEF3C82358E29B00F0CEAC /* LookerETASTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookerETASTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				4F114400235B03E400198E7C /* StockGraphViews */,
 				4F1143FB235AD6AA00198E7C /* Viewer3D */,
+				4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */,
+				4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */,
 				CBFEF3E12358E30200F0CEAC /* SplashViewController.storyboard */,
 				CBFEF3E32358E31400F0CEAC /* SplashViewController.swift */,
 				CBFEF3E52359424E00F0CEAC /* HomeViewController.storyboard */,
@@ -154,8 +160,6 @@
 				CBFEF3EF2359443B00F0CEAC /* SizeViewController.storyboard */,
 				CBFEF3ED2359442600F0CEAC /* SizeViewController.swift */,
 				CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */,
-				CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */,
-				CB2B4635235B521700AF86AD /* ItemInfoCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -220,6 +224,7 @@
 			files = (
 				CBFEF3E22358E30200F0CEAC /* SplashViewController.storyboard in Resources */,
 				4F1143FF235AD6E800198E7C /* Viewer3D.xib in Resources */,
+				4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */,
 				CBFEF3D52358E29C00F0CEAC /* Assets.xcassets in Resources */,
 				4F1143FA235ACF5B00198E7C /* SceneKit Asset Catalog.scnassets in Resources */,
 				4F114404235B046600198E7C /* StockGraphView.xib in Resources */,
@@ -244,6 +249,7 @@
 				CBFEF3CC2358E29B00F0CEAC /* AppDelegate.swift in Sources */,
 				4F114408235B079000198E7C /* LineChart.swift in Sources */,
 				CBFEF3EA235942FE00F0CEAC /* ItemViewController.swift in Sources */,
+				4FA1B9D2235BCD6000A53271 /* ItemInfoCell.swift in Sources */,
 				4F114402235B045600198E7C /* StockGraphView.swift in Sources */,
 				4F11440A235B07A900198E7C /* DotCALayer.swift in Sources */,
 				4F11440F235B13DA00198E7C /* Color.swift in Sources */,

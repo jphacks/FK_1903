@@ -38,12 +38,13 @@ class ItemViewController: UIViewController{
         itemXibView.discountPriceLabel.textColor = UIColor.red
         
         view.addSubview(itemXibView)
-    
+        
+        //initializeSceneView()
+        //initializeStockGraphView()
     }
     
     
     @IBAction func toSellViewButton(_ sender: Any) {
-        
         let sizeViewControllerStoryboard = UIStoryboard(name: "SizeViewController", bundle: nil)
         let sizeViewController = sizeViewControllerStoryboard.instantiateInitialViewController() as! SizeViewController
         sizeViewController.modalPresentationStyle = .overFullScreen
