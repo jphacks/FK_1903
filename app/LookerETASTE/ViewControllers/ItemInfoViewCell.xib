@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemInfoViewCell" customModule="LookerETASTE" customModuleProvider="target">
             <connections>
+                <outlet property="colorLabel" destination="lbf-dq-Jcd" id="Bke-kO-3dQ"/>
                 <outlet property="colorLobel" destination="lbf-dq-Jcd" id="Roc-AQ-gjD"/>
                 <outlet property="discountPriceLabel" destination="Bb0-Ci-AAj" id="pHv-TX-f0m"/>
                 <outlet property="originalPriceLabel" destination="OYB-Lt-GTv" id="gHv-Si-6a7"/>
