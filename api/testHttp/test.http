@@ -70,8 +70,4 @@ GET {{baseUrl}}/trade/1 HTTP/1.1
 
 ###
 
-GET {{baseUrl}}/trade/size/1 HTTP/1.1
-
-###
-
-GET {{baseUrl}}/trade/news HTTP/1.1
+GET {{baseUrl}}/trade/size/2 HTTP/1.1
