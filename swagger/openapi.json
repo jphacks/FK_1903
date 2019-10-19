@@ -1,0 +1,1443 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Looker API",
+    "description": "Looker API for JPHACKS2019.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/sneaker": {
+      "get": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Get Sneakers.",
+        "operationId": "getsSeakers",
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SneakerAll"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Create Sneaker.",
+        "operationId": "createSneaker",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sneaker"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success Created."
+          },
+          "default": {
+            "description": "Failed Created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sneaker/popular": {
+      "get": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Get Sneakers.",
+        "operationId": "getsSeakersPopular",
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SneakerRanking"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sneaker/lowest": {
+      "get": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Get Sneakers.",
+        "operationId": "getsSeakersLowest",
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SneakerRanking"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sneaker/highest": {
+      "get": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Get Sneakers.",
+        "operationId": "getsSeakersHigtest",
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SneakerRanking"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sneaker/{sneakerId}": {
+      "get": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Get Sneaker by ID.",
+        "operationId": "getsSeaker",
+        "parameters": [
+          {
+            "name": "sneakerId",
+            "in": "path",
+            "description": "Sneaker Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sneaker"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "sneaker"
+        ],
+        "summary": "Delete Sneaker by ID.",
+        "operationId": "deleteSneaker",
+        "parameters": [
+          {
+            "name": "sneakerId",
+            "in": "path",
+            "description": "Sneaker Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success Delete."
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trade": {
+      "post": {
+        "tags": [
+          "trade"
+        ],
+        "summary": "Create Trade.",
+        "operationId": "createTrade",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TradeCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success Created."
+          },
+          "default": {
+            "description": "Failed Created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trade/{sneakerId}": {
+      "get": {
+        "tags": [
+          "trade"
+        ],
+        "summary": "Get Trade by ID.",
+        "operationId": "getTrade",
+        "parameters": [
+          {
+            "name": "sneakerId",
+            "in": "path",
+            "description": "Sneaker Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeHistroy"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trade/size/{sneakerId}": {
+      "get": {
+        "tags": [
+          "trade"
+        ],
+        "summary": "Get TradeSize by ID.",
+        "operationId": "getTradeSize",
+        "parameters": [
+          {
+            "name": "sneakerId",
+            "in": "path",
+            "description": "Sneaker Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeSize"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trade/news": {
+      "get": {
+        "tags": [
+          "trade"
+        ],
+        "summary": "Get TradeNews.",
+        "operationId": "getTradeNews",
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradeNews"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bid/{sneakerId}[WIP]": {
+      "get": {
+        "tags": [
+          "bid"
+        ],
+        "summary": "Get Bid by ID.",
+        "operationId": "getBid",
+        "parameters": [
+          {
+            "name": "sneakerId",
+            "in": "path",
+            "description": "Sneaker Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bid[WIP]": {
+      "post": {
+        "tags": [
+          "bid"
+        ],
+        "summary": "Create Bid.",
+        "operationId": "createBid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success Created."
+          },
+          "default": {
+            "description": "Failed Created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bid/{bidId}": {
+      "delete": {
+        "tags": [
+          "bid"
+        ],
+        "summary": "Delete Bid by ID.",
+        "operationId": "deleteBid",
+        "parameters": [
+          {
+            "name": "bidId",
+            "in": "path",
+            "description": "Bid Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success Delete."
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/exhibit/{sneakerId}[WIP]": {
+      "get": {
+        "tags": [
+          "exhibit"
+        ],
+        "summary": "Get Exhibit by ID.",
+        "operationId": "getExhibit",
+        "parameters": [
+          {
+            "name": "sneakerId",
+            "in": "path",
+            "description": "Sneaker Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/exhibit[WIP]": {
+      "post": {
+        "tags": [
+          "exhibit"
+        ],
+        "summary": "Create Exhibit.",
+        "operationId": "createExhibit",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success Created."
+          },
+          "default": {
+            "description": "Failed Created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/exhibit/{exhibitId}": {
+      "delete": {
+        "tags": [
+          "exhibit"
+        ],
+        "summary": "Delete Exhibit by ID.",
+        "operationId": "deleteExhibit",
+        "parameters": [
+          {
+            "name": "exhibitId",
+            "in": "path",
+            "description": "Exhibit Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success Delete."
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Create User.",
+        "operationId": "createUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success Created."
+          },
+          "default": {
+            "description": "Failed Created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Login User.",
+        "operationId": "loginUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success Login."
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/logout": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Logout User.",
+        "operationId": "logoutUser",
+        "responses": {
+          "200": {
+            "description": "Success Logout."
+          }
+        }
+      }
+    },
+    "/user/{userId}": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete User.",
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "User Id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success Delete."
+          },
+          "default": {
+            "description": "Failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Color": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Sneaker": {
+        "type": "object",
+        "required": [
+          "id",
+          "nameMain",
+          "nameSub",
+          "image",
+          "partNo",
+          "colors",
+          "releaseDate",
+          "regularPrice"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nameMain": {
+            "type": "string"
+          },
+          "nameSub": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "partNo": {
+            "type": "string"
+          },
+          "colors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Color"
+            }
+          },
+          "releaseDate": {
+            "type": "string"
+          },
+          "regularPrice": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "id": 1,
+          "nameMain": "Travis Scott",
+          "nameSub": "Jordan6 Retro",
+          "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+          "partNo": "130-X1345",
+          "colors": [
+            {
+              "name": "Bruwn"
+            },
+            {
+              "name": "Black"
+            },
+            {
+              "name": "White"
+            }
+          ],
+          "releaseDate": "2018/09/13",
+          "regularPrice": 19000
+        }
+      },
+      "SneakerAll": {
+        "type": "object",
+        "required": [
+          "id",
+          "num",
+          "popular",
+          "lowest",
+          "highest"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "num": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "popular": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SneakerRanking"
+            }
+          },
+          "lowest": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SneakerRanking"
+            }
+          },
+          "highest": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SneakerRanking"
+            }
+          }
+        },
+        "example": {
+          "id": 1,
+          "num": 3,
+          "popular": [
+            {
+              "id": 1,
+              "nameMain": "Travis Scott",
+              "nameSub": "Jordan6 Retro",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 19000
+            },
+            {
+              "id": 2,
+              "nameMain": "Tokyo Maze",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 23000
+            },
+            {
+              "id": 5,
+              "nameMain": "Animal",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 22000
+            }
+          ],
+          "lowest": [
+            {
+              "id": 10,
+              "nameMain": "Rainbow",
+              "nameSub": "AirMax90",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 14000
+            },
+            {
+              "id": 1,
+              "nameMain": "Travis Scott",
+              "nameSub": "Jordan6 Retro",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 19000
+            },
+            {
+              "id": 5,
+              "nameMain": "Animal",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 22000
+            }
+          ],
+          "highest": [
+            {
+              "id": 7,
+              "nameMain": "Obsidian",
+              "nameSub": "Jordan1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 30000
+            },
+            {
+              "id": 2,
+              "nameMain": "Tokyo Maze",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 23000
+            },
+            {
+              "id": 5,
+              "nameMain": "Animal",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 22000
+            }
+          ]
+        }
+      },
+      "SneakerRanking": {
+        "type": "object",
+        "required": [
+          "id",
+          "sneakerNum",
+          "sneakers"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sneakerNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sneakers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SneakerDetail"
+            }
+          }
+        },
+        "example": {
+          "id": 1,
+          "sneakerNum": 5,
+          "sneakers": [
+            {
+              "id": 1,
+              "nameMain": "Travis Scott",
+              "nameSub": "Jordan6 Retro",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 19000
+            },
+            {
+              "id": 2,
+              "nameMain": "Tokyo Maze",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 23000
+            },
+            {
+              "id": 5,
+              "nameMain": "Animal",
+              "nameSub": "AirMax1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 22000
+            },
+            {
+              "id": 7,
+              "nameMain": "Obsidian",
+              "nameSub": "Jordan1",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 30000
+            },
+            {
+              "id": 10,
+              "nameMain": "Rainbow",
+              "nameSub": "AirMax90",
+              "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+              "price": 14000
+            }
+          ]
+        }
+      },
+      "SneakerDetail": {
+        "type": "object",
+        "required": [
+          "id",
+          "nameMain",
+          "nameSub",
+          "image",
+          "price"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nameMain": {
+            "type": "string"
+          },
+          "nameSub": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TradeCreate": {
+        "type": "object",
+        "required": [
+          "id",
+          "userId",
+          "sneakerId",
+          "size",
+          "tradePrice",
+          "tradeDate"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sneakerId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "number"
+          },
+          "tradePrice": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tradeDate": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 1,
+          "userId": 1,
+          "sneakerId": 1,
+          "size": 26.5,
+          "tradePrice": 31000,
+          "tradeDate": "2019/10/20"
+        }
+      },
+      "TradeHistroy": {
+        "type": "object",
+        "required": [
+          "id",
+          "tradeNum",
+          "trades"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tradeNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trades": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TradeInfo"
+            }
+          }
+        },
+        "example": {
+          "id": 1,
+          "tradeNum": 15,
+          "trades": [
+            {
+              "id": 1,
+              "size": 26.5,
+              "tradePrice": 20000,
+              "tradeDate": "2019/07/30"
+            },
+            {
+              "id": 3,
+              "size": 25.5,
+              "tradePrice": 19000,
+              "tradeDate": "2019/08/15"
+            },
+            {
+              "id": 6,
+              "size": 27,
+              "tradePrice": 21000,
+              "tradeDate": "2019/09/02"
+            },
+            {
+              "id": 8,
+              "size": 26,
+              "tradePrice": 23000,
+              "tradeDate": "2019/09/17"
+            },
+            {
+              "id": 9,
+              "size": 28.5,
+              "tradePrice": 19500,
+              "tradeDate": "2019/09/20"
+            },
+            {
+              "id": 15,
+              "size": 27,
+              "tradePrice": 22000,
+              "tradeDate": "2019/09/29"
+            },
+            {
+              "id": 19,
+              "size": 27.5,
+              "tradePrice": 21000,
+              "tradeDate": "2019/10/05"
+            },
+            {
+              "id": 24,
+              "size": 26.5,
+              "tradePrice": 22500,
+              "tradeDate": "2019/10/06"
+            },
+            {
+              "id": 27,
+              "size": 27,
+              "tradePrice": 24000,
+              "tradeDate": "2019/10/14"
+            },
+            {
+              "id": 32,
+              "size": 28,
+              "tradePrice": 25000,
+              "tradeDate": "2019/10/15"
+            },
+            {
+              "id": 33,
+              "size": 26.5,
+              "tradePrice": 26000,
+              "tradeDate": "2019/10/16"
+            },
+            {
+              "id": 34,
+              "size": 26,
+              "tradePrice": 29000,
+              "tradeDate": "2019/10/18"
+            },
+            {
+              "id": 36,
+              "size": 26,
+              "tradePrice": 27500,
+              "tradeDate": "2019/10/19"
+            },
+            {
+              "id": 39,
+              "size": 27.5,
+              "tradePrice": 28000,
+              "tradeDate": "2019/10/20"
+            },
+            {
+              "id": 40,
+              "size": 27,
+              "tradePrice": 30000,
+              "tradeDate": "2019/10/20"
+            }
+          ]
+        }
+      },
+      "TradeInfo": {
+        "type": "object",
+        "required": [
+          "id",
+          "size",
+          "tradePrice",
+          "tradeDate"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "number"
+          },
+          "tradePrice": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tradeDate": {
+            "type": "string"
+          }
+        }
+      },
+      "TradeSize": {
+        "type": "object",
+        "required": [
+          "id",
+          "sizes"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sizes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SizeInfo"
+            }
+          }
+        },
+        "example": {
+          "id": 1,
+          "sizes": [
+            {
+              "size": 0,
+              "lowestPrice": 18000
+            },
+            {
+              "size": 25,
+              "lowestPrice": 20000
+            },
+            {
+              "size": 25.5,
+              "lowestPrice": 21000
+            },
+            {
+              "size": 26,
+              "lowestPrice": 25000
+            },
+            {
+              "size": 26.5,
+              "lowestPrice": 28000
+            },
+            {
+              "size": 27,
+              "lowestPrice": 26000
+            },
+            {
+              "size": 27.5,
+              "lowestPrice": 24000
+            },
+            {
+              "size": 28,
+              "lowestPrice": 23000
+            },
+            {
+              "size": 28.5,
+              "lowestPrice": 22000
+            },
+            {
+              "size": 29,
+              "lowestPrice": 20000
+            },
+            {
+              "size": 29.5,
+              "lowestPrice": 18000
+            },
+            {
+              "size": 30,
+              "lowestPrice": 19000
+            }
+          ]
+        }
+      },
+      "SizeInfo": {
+        "type": "object",
+        "required": [
+          "size",
+          "lowestPrice"
+        ],
+        "properties": {
+          "size": {
+            "type": "number"
+          },
+          "lowestPrice": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TradeNews": {
+        "type": "object",
+        "required": [
+          "id",
+          "message"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "message": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SneakerIndo"
+            }
+          }
+        },
+        "example": {
+          "id": 1,
+          "message": [
+            {
+              "name": "Travis Scott",
+              "price": 18000
+            },
+            {
+              "name": "Tokyo Maze",
+              "price": 27000
+            },
+            {
+              "name": "Obsidian",
+              "price": 30000
+            }
+          ]
+        }
+      },
+      "SneakerIndo": {
+        "type": "object",
+        "required": [
+          "name",
+          "price"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "required": [
+          "firstName",
+          "lastName",
+          "firstNameKana",
+          "lastNameKana",
+          "mail",
+          "password"
+        ],
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "firstNameKana": {
+            "type": "string"
+          },
+          "lastNameKana": {
+            "type": "string"
+          },
+          "mail": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "firstName": "山下",
+          "lastName": "昂太",
+          "firstNameKana": "ヤマシタ",
+          "lastNameKana": "コウタ",
+          "mail": "looker@gmail.com",
+          "password": "KBa45fdg"
+        }
+      },
+      "UserLogin": {
+        "type": "object",
+        "required": [
+          "mail",
+          "password"
+        ],
+        "properties": {
+          "mail": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "mail": "looker@gmail.com",
+          "password": "KBa45fdg"
+        }
+      },
+      "Error": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": 1,
+          "message": "Default Error."
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "sneaker",
+      "description": "About Sneaker."
+    },
+    {
+      "name": "trade",
+      "description": "About Trade."
+    },
+    {
+      "name": "bid",
+      "description": "About Bid."
+    },
+    {
+      "name": "exhibit",
+      "description": "About Exhibit."
+    },
+    {
+      "name": "user",
+      "description": "About User."
+    }
+  ]
+}
