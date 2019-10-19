@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Item画面へ"/>
                                 <connections>
-                                    <action selector="ToItemViewButton:" destination="RoS-8k-CzC" eventType="touchUpInside" id="kDw-6t-ocS"/>
+                                    <action selector="ToItemViewButton:" destination="RoS-8k-CzC" eventType="touchUpInside" id="8eB-xG-Q13"/>
                                 </connections>
                             </button>
                         </subviews>

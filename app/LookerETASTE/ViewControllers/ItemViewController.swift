@@ -23,7 +23,19 @@ class ItemViewController: UIViewController{
         
         self.title = "Item"
         
+        callxib()
+    
     }
+    
+    
+    func callxib(){
+
+        let nib = UINib(nibName: "ItemInfoView", bundle: nil)
+        //let itemInfoView = nib.instantiate(withOwner: nil, options: nil)[0] as! ItemInfoView
+        //view.addSubview(itemInfoView)
+
+    }
+    
     
     @IBAction func toSellViewButton(_ sender: Any) {
         
