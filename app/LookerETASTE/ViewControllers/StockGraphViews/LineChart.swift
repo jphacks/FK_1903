@@ -93,7 +93,7 @@ class LineChart: UIView {
         mainLayer.addSublayer(dataLayer)
         scrollView.layer.addSublayer(mainLayer)
         
-        gradientLayer.colors = [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor, UIColor.clear.cgColor]
+        //gradientLayer.colors = [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor, UIColor.clear.cgColor]
         scrollView.layer.addSublayer(gradientLayer)
         self.layer.addSublayer(gridLayer)
         self.addSubview(scrollView)

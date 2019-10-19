@@ -90,9 +90,20 @@ extension ItemViewController {
         stockGraphView.curvedLineChart.isCurved = true
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.panStockGraphView(sender:)))
         stockGraphView.addGestureRecognizer(panGestureRecognizer)
+        stockGraphView.weeklyTabTapped = { [weak self] in
+            print("weeklyTabTapped")
+        }
+        stockGraphView.monthlyTabTapped = { [weak self] in
+            print("monthlyTabTapped")
+        }
+        stockGraphView.threeMonthlyTabTapped = { [weak self] in
+            print("threeMonthlyTabTapped")
+        }
         
+        stockGraphView.tabsSetup()
         stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
         self.view.addSubview(stockGraphView)
+        
     }
     
     @objc func panStockGraphView(sender: UIPanGestureRecognizer) {

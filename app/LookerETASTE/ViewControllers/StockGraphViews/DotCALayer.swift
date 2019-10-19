@@ -30,7 +30,7 @@ class DotCALayer: CALayer {
         let inset = self.bounds.size.width - innerRadius
         let innerDotLayer = CALayer()
         innerDotLayer.frame = self.bounds.insetBy(dx: inset/2, dy: inset/2)
-        innerDotLayer.backgroundColor = dotInnerColor.cgColor
+        innerDotLayer.backgroundColor = UIColor.lookerBlue.cgColor
         innerDotLayer.cornerRadius = innerRadius / 2
         self.addSublayer(innerDotLayer)
     }

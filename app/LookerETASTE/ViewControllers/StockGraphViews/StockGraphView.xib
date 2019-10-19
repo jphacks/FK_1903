@@ -13,11 +13,15 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V99-Ky-sAH" userLabel="BackGroundView">
+                    <rect key="frame" x="0.0" y="35" width="400" height="465"/>
+                    <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtF-te-45m" userLabel="Weekly Tab">
-                    <rect key="frame" x="0.0" y="0.0" width="130" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="週" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-Kx-Uhb" userLabel="Title">
-                            <rect key="frame" x="56" y="16" width="18.5" height="18"/>
+                            <rect key="frame" x="56" y="8.5" width="18.5" height="18"/>
                             <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -25,22 +29,36 @@
                     </subviews>
                     <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="LtF-te-45m" secondAttribute="height" multiplier="13:7" id="i15-eH-uAT"/>
+                        <constraint firstAttribute="height" constant="35" id="28h-SR-PKI"/>
+                        <constraint firstAttribute="width" secondItem="LtF-te-45m" secondAttribute="height" multiplier="26:7" id="Y5y-wa-ZK8"/>
                         <constraint firstItem="Drk-Kx-Uhb" firstAttribute="centerX" secondItem="LtF-te-45m" secondAttribute="centerX" id="krp-Je-Wl9"/>
-                        <constraint firstItem="Drk-Kx-Uhb" firstAttribute="centerY" secondItem="LtF-te-45m" secondAttribute="centerY" constant="-10" id="x9d-Fr-b9s"/>
-                        <constraint firstAttribute="height" constant="70" id="xSh-gF-DqI"/>
+                        <constraint firstAttribute="width" secondItem="LtF-te-45m" secondAttribute="height" multiplier="26:7" id="wzU-17-HTj"/>
+                        <constraint firstItem="Drk-Kx-Uhb" firstAttribute="centerY" secondItem="LtF-te-45m" secondAttribute="centerY" id="x9d-Fr-b9s"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-1Q-V3A" userLabel="Monthly Tab">
+                    <rect key="frame" x="135" y="0.0" width="130" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1ヶ月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-vZ-9Cw" userLabel="Title">
+                            <rect key="frame" x="40.5" y="8.5" width="49" height="18"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="8LX-vZ-9Cw" firstAttribute="centerX" secondItem="G6g-1Q-V3A" secondAttribute="centerX" id="5Oq-QG-HOW"/>
+                        <constraint firstAttribute="width" secondItem="G6g-1Q-V3A" secondAttribute="height" multiplier="26:7" id="HfJ-OB-8Mf"/>
+                        <constraint firstItem="8LX-vZ-9Cw" firstAttribute="centerY" secondItem="G6g-1Q-V3A" secondAttribute="centerY" id="ZSL-ak-DXP"/>
+                        <constraint firstAttribute="height" constant="35" id="f0W-G6-wPR"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-VZ-sxn" userLabel="Three Monthly Tab">
-                    <rect key="frame" x="270" y="0.0" width="130" height="70"/>
+                    <rect key="frame" x="270" y="0.0" width="130" height="35"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3ヶ月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsO-87-lTL" userLabel="Title">
-                            <rect key="frame" x="40.5" y="16" width="49" height="18"/>
+                            <rect key="frame" x="40.5" y="8.5" width="49" height="18"/>
                             <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -48,20 +66,11 @@
                     </subviews>
                     <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="NsO-87-lTL" firstAttribute="centerY" secondItem="E5t-VZ-sxn" secondAttribute="centerY" constant="-10" id="0kx-YD-l3f"/>
-                        <constraint firstAttribute="width" secondItem="E5t-VZ-sxn" secondAttribute="height" multiplier="13:7" id="KAJ-el-QbK"/>
-                        <constraint firstAttribute="height" constant="70" id="fu9-GG-47c"/>
+                        <constraint firstItem="NsO-87-lTL" firstAttribute="centerY" secondItem="E5t-VZ-sxn" secondAttribute="centerY" id="0kx-YD-l3f"/>
+                        <constraint firstAttribute="width" secondItem="E5t-VZ-sxn" secondAttribute="height" multiplier="26:7" id="4xD-u4-7OY"/>
                         <constraint firstItem="NsO-87-lTL" firstAttribute="centerX" secondItem="E5t-VZ-sxn" secondAttribute="centerX" id="mOy-hU-oha"/>
+                        <constraint firstAttribute="height" constant="35" id="wpo-ae-81F"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V99-Ky-sAH" userLabel="BackGroundView">
-                    <rect key="frame" x="0.0" y="40" width="400" height="460"/>
-                    <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3C-2w-xD0" customClass="LineChart" customModule="LookerETASTE" customModuleProvider="target">
                     <rect key="frame" x="15" y="65" width="370" height="300"/>
@@ -100,29 +109,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-1Q-V3A" userLabel="Monthly Tab">
-                    <rect key="frame" x="135" y="0.0" width="130" height="70"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1ヶ月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-vZ-9Cw" userLabel="Title">
-                            <rect key="frame" x="40.5" y="16" width="49" height="18"/>
-                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="8LX-vZ-9Cw" firstAttribute="centerX" secondItem="G6g-1Q-V3A" secondAttribute="centerX" id="5Oq-QG-HOW"/>
-                        <constraint firstAttribute="width" secondItem="G6g-1Q-V3A" secondAttribute="height" multiplier="13:7" id="7Xr-0z-ZYf"/>
-                        <constraint firstItem="8LX-vZ-9Cw" firstAttribute="centerY" secondItem="G6g-1Q-V3A" secondAttribute="centerY" constant="-10" id="ZSL-ak-DXP"/>
-                        <constraint firstAttribute="height" constant="70" id="mCw-gX-Y3z"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="htI-IE-PFE" firstAttribute="centerY" secondItem="FIf-EB-y83" secondAttribute="centerY" id="29h-uE-pV4"/>
@@ -140,7 +126,7 @@
                 <constraint firstItem="G6g-1Q-V3A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="WDT-fB-4Wg"/>
                 <constraint firstItem="FIf-EB-y83" firstAttribute="top" secondItem="C3C-2w-xD0" secondAttribute="bottom" constant="15" id="Wdk-57-quE"/>
                 <constraint firstItem="V99-Ky-sAH" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eAg-qi-vtN"/>
-                <constraint firstItem="V99-Ky-sAH" firstAttribute="top" secondItem="LtF-te-45m" secondAttribute="bottom" constant="-30" id="o8g-Bq-77c"/>
+                <constraint firstItem="V99-Ky-sAH" firstAttribute="top" secondItem="LtF-te-45m" secondAttribute="bottom" id="o8g-Bq-77c"/>
                 <constraint firstItem="E5t-VZ-sxn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="t8X-Nr-DAl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="E5t-VZ-sxn" secondAttribute="trailing" id="wRZ-w9-7Za"/>
                 <constraint firstItem="htI-IE-PFE" firstAttribute="leading" secondItem="IsN-m7-sAO" secondAttribute="trailing" constant="104" id="wbV-iw-JTp"/>
@@ -149,6 +135,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="curvedLineChart" destination="C3C-2w-xD0" id="Nlf-5T-nFC"/>
+                <outlet property="monthlyTab" destination="G6g-1Q-V3A" id="G33-4a-Cpx"/>
+                <outlet property="threeMonthlyTab" destination="E5t-VZ-sxn" id="afr-sG-Knn"/>
+                <outlet property="weeklyTab" destination="LtF-te-45m" id="Q4t-JD-mXy"/>
             </connections>
             <point key="canvasLocation" x="123.2" y="97.151424287856074"/>
         </view>
