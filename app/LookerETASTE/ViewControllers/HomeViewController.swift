@@ -12,14 +12,14 @@ import UIKit
 class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
-        self.title = "Home"
+        self.title = "Looker"
     }
     
     @IBAction func ToItemViewButton(_ sender: Any) {
         let itemViewControllerStoryboard = UIStoryboard(name: "ItemViewController", bundle: nil)
         let itemViewController = itemViewControllerStoryboard.instantiateInitialViewController() as! ItemViewController
         itemViewController.modalPresentationStyle = .overFullScreen
-        self.navigationController!.pushViewController(itemViewController, animated: false)
+        self.navigationController!.pushViewController(itemViewController, animated: true)
     }
     
 }

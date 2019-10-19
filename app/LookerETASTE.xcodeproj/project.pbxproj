@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB2B4634235B51FB00AF86AD /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */; };
+		CB2B4636235B521700AF86AD /* ItemInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2B4635235B521700AF86AD /* ItemInfoCell.xib */; };
 		CBC20B402359A3B20078F2D1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */; };
 		CBFEF3CC2358E29B00F0CEAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */; };
 		CBFEF3CE2358E29B00F0CEAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEF3CD2358E29B00F0CEAC /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
+		CB2B4635235B521700AF86AD /* ItemInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemInfoCell.xib; sourceTree = "<group>"; };
 		CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		CBFEF3C82358E29B00F0CEAC /* LookerETASTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookerETASTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				CBFEF3EF2359443B00F0CEAC /* SizeViewController.storyboard */,
 				CBFEF3ED2359442600F0CEAC /* SizeViewController.swift */,
 				CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */,
+				CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */,
+				CB2B4635235B521700AF86AD /* ItemInfoCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			files = (
 				CBFEF3E22358E30200F0CEAC /* SplashViewController.storyboard in Resources */,
 				CBFEF3D52358E29C00F0CEAC /* Assets.xcassets in Resources */,
+				CB2B4636235B521700AF86AD /* ItemInfoCell.xib in Resources */,
 				CBFEF3F02359443B00F0CEAC /* SizeViewController.storyboard in Resources */,
 				CBFEF3EC2359430E00F0CEAC /* ItemViewController.storyboard in Resources */,
 				CBFEF3E62359424E00F0CEAC /* HomeViewController.storyboard in Resources */,
@@ -174,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2B4634235B51FB00AF86AD /* ItemInfoCell.swift in Sources */,
 				CBFEF3E42358E31400F0CEAC /* SplashViewController.swift in Sources */,
 				CBFEF3EE2359442600F0CEAC /* SizeViewController.swift in Sources */,
 				CBFEF3CC2358E29B00F0CEAC /* AppDelegate.swift in Sources */,
