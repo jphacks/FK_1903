@@ -335,7 +335,7 @@ class LineChart: UIView {
                 dotLayer.frame = CGRect(x: xValue, y: yValue, width: outerRadius, height: outerRadius)
                 dotLayers.append(dotLayer)
 
-                mainLayer.addSublayer(dotLayer)
+                //mainLayer.addSublayer(dotLayer)
 
                 if animateDots {
                     let anim = CABasicAnimation(keyPath: "opacity")

@@ -17,13 +17,18 @@ class StockGraphView: UIView {
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var lineLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var curvedLineChartLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var pointerGroupView: UIView!
+    @IBOutlet weak var pointerGroupViewHorizontalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var pointerGroupViewVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var pointerPriceLabel: UILabel!
     
     var weeklyTabTapped: (() -> ())?
     var monthlyTabTapped: (() -> ())?
     var threeMonthlyTabTapped: (() -> ())?
     
-    func lineSetup() {
+    func pointerSetup() {
         line.isHidden = true
+        pointerGroupView.isHidden = true
     }
     
     func tabsSetup() {

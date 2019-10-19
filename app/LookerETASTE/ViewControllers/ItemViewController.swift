@@ -16,6 +16,7 @@ class ItemViewController: UIViewController{
     @IBOutlet weak var sellPriceLabel: UILabel!
     
     var node: SCNNode!
+    var dataEntries: [PointEntry] = []
     var stockGraphDotsPoints: [CGPoint] = []
     
     var stockGraphView: StockGraphView!
@@ -91,8 +92,9 @@ extension ItemViewController: LineChartDelegate {
         stockGraphView = nib.instantiate(withOwner: nil, options: nil)[0] as? StockGraphView
         stockGraphView.curvedLineChart.delegate = self
         // 決め打ちのデータ
-        let dataEntries = [PointEntry(value: 0, label: "0"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 20, label: "20"), PointEntry(value: 30, label: "30"), PointEntry(value: 100, label: "100")]
+        dataEntries = [PointEntry(value: 0, label: "0"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 20, label: "20"), PointEntry(value: 30, label: "30"), PointEntry(value: 100, label: "100")]
         
+        stockGraphView.pointerSetup()
         stockGraphView.curvedLineChart.dataEntries = dataEntries
         stockGraphView.curvedLineChart.isCurved = true
         stockGraphView.curvedLineChart.lineGap = 60
@@ -112,36 +114,46 @@ extension ItemViewController: LineChartDelegate {
         stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
         self.view.addSubview(stockGraphView)
         self.view.bringSubviewToFront(stockGraphView.line)
-        
-        print("stockGraphView.frame.origin.x : ", stockGraphView.frame.origin.x)
     }
 
     @objc func panStockGraphView(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began:
             stockGraphView.line.isHidden = false
-            stockGraphView.lineLeftConstraint.constant = getNearestPoint(touchPoint: sender.location(in: view), points: stockGraphDotsPoints).x + stockGraphView.frame.origin.x + stockGraphView.curvedLineChartLeftConstraint.constant
+            stockGraphView.pointerGroupView.isHidden = false
+            let targetPointIndex = getNearestPointIndex(touchPoint: sender.location(in: view), points: stockGraphDotsPoints)
+            adjustPointerPosition(index: targetPointIndex)
         case .changed:
-            stockGraphView.lineLeftConstraint.constant = getNearestPoint(touchPoint: sender.location(in: view), points: stockGraphDotsPoints).x + stockGraphView.frame.origin.x + stockGraphView.curvedLineChartLeftConstraint.constant
+            let targetPointIndex = getNearestPointIndex(touchPoint: sender.location(in: view), points: stockGraphDotsPoints)
+            adjustPointerPosition(index: targetPointIndex)
         case .ended:
             stockGraphView.line.isHidden = true
+            stockGraphView.pointerGroupView.isHidden = true
         default:
             break
         }
     }
     
-    func getNearestPoint(touchPoint: CGPoint, points: [CGPoint]) -> CGPoint {
-        var nearestPoint: CGPoint?
+    func getNearestPointIndex(touchPoint: CGPoint, points: [CGPoint]) -> Int {
+        var nearestPointIndex: Int?
         var mindiff: CGFloat = 10000
-        // xのみ見るけど返すのはCGPoint
-        for point in points {
+        for (index, point) in points.enumerated() {
             let diff = abs(point.x - touchPoint.x)
             if diff <= mindiff {
-                nearestPoint = point
+                nearestPointIndex = index
                 mindiff = diff
             }
         }
-        return nearestPoint!
+        return nearestPointIndex!
+    }
+    
+    func adjustPointerPosition(index: Int) {
+        let xTargetPos = stockGraphDotsPoints[index].x + stockGraphView.frame.origin.x + stockGraphView.curvedLineChartLeftConstraint.constant
+        let yTargetPos = stockGraphDotsPoints[index].y - stockGraphView.curvedLineChart.frame.origin.y - self.view.safeAreaInsets.top
+        stockGraphView.lineLeftConstraint.constant = xTargetPos
+        stockGraphView.pointerGroupViewHorizontalConstraint.constant = xTargetPos
+        stockGraphView.pointerGroupViewVerticalConstraint.constant = yTargetPos
+        stockGraphView.pointerPriceLabel.text = String(dataEntries[index].value)
     }
 
 }

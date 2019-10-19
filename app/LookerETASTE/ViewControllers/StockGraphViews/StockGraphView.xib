@@ -116,8 +116,46 @@
                         <constraint firstAttribute="width" constant="1" id="ti6-fG-rJK"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hge-e4-Btn" userLabel="Pointer Group View">
+                    <rect key="frame" x="0.0" y="165" width="0.0" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble.middle.bottom.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-r2-ODw" userLabel="Pointer Balloon Image">
+                            <rect key="frame" x="-40" y="6" width="80" height="30"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="HVU-Sb-F6H"/>
+                                <constraint firstAttribute="width" constant="80" id="bYO-US-i0S"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4,697" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5n-mf-dck" userLabel="Pointer Price Label">
+                            <rect key="frame" x="-23" y="12" width="46" height="16"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iHl-Fn-sDd">
+                            <rect key="frame" x="-7.5" y="43" width="15" height="15"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="Ch4-bA-QJB"/>
+                                <constraint firstAttribute="height" constant="15.5" id="neh-QS-Ls9"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l5n-mf-dck" firstAttribute="centerY" secondItem="fdK-r2-ODw" secondAttribute="centerY" id="AKn-Y6-u6f"/>
+                        <constraint firstItem="iHl-Fn-sDd" firstAttribute="centerX" secondItem="hge-e4-Btn" secondAttribute="centerX" id="CMy-yI-4St"/>
+                        <constraint firstAttribute="height" constant="100" id="OaL-0g-1Tr"/>
+                        <constraint firstItem="fdK-r2-ODw" firstAttribute="centerX" secondItem="hge-e4-Btn" secondAttribute="centerX" id="P6S-NT-egv"/>
+                        <constraint firstItem="iHl-Fn-sDd" firstAttribute="centerY" secondItem="hge-e4-Btn" secondAttribute="centerY" id="TX0-Qb-oDU"/>
+                        <constraint firstAttribute="width" id="Zy0-P0-RAY"/>
+                        <constraint firstItem="l5n-mf-dck" firstAttribute="centerX" secondItem="fdK-r2-ODw" secondAttribute="centerX" id="biC-8Y-qp9"/>
+                        <constraint firstItem="fdK-r2-ODw" firstAttribute="centerY" secondItem="hge-e4-Btn" secondAttribute="centerY" constant="-30" id="pPF-fI-UbF"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
+                <constraint firstItem="hge-e4-Btn" firstAttribute="centerY" secondItem="C3C-2w-xD0" secondAttribute="centerY" id="25a-XL-Yr8"/>
                 <constraint firstItem="htI-IE-PFE" firstAttribute="centerY" secondItem="FIf-EB-y83" secondAttribute="centerY" id="29h-uE-pV4"/>
                 <constraint firstItem="V99-Ky-sAH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2XN-PN-s5B"/>
                 <constraint firstItem="C3C-2w-xD0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="6C8-AD-1Wu"/>
@@ -125,6 +163,7 @@
                 <constraint firstItem="XLH-KK-gzh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ABu-So-XXY"/>
                 <constraint firstItem="FIf-EB-y83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="F03-oW-3mi"/>
                 <constraint firstItem="C3C-2w-xD0" firstAttribute="bottom" secondItem="XLH-KK-gzh" secondAttribute="bottom" id="IJV-Dp-q3l"/>
+                <constraint firstItem="hge-e4-Btn" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IQI-0n-Iid"/>
                 <constraint firstItem="G6g-1Q-V3A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J5G-QE-h4g"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="C3C-2w-xD0" secondAttribute="trailing" constant="15" id="Kim-WK-wt6"/>
                 <constraint firstItem="XLH-KK-gzh" firstAttribute="top" secondItem="C3C-2w-xD0" secondAttribute="top" id="LWL-YI-XGz"/>
@@ -149,10 +188,26 @@
                 <outlet property="line" destination="XLH-KK-gzh" id="a9j-Vj-tp6"/>
                 <outlet property="lineLeftConstraint" destination="ABu-So-XXY" id="dGk-L4-0Gc"/>
                 <outlet property="monthlyTab" destination="G6g-1Q-V3A" id="G33-4a-Cpx"/>
+                <outlet property="pointerGroupView" destination="hge-e4-Btn" id="Nvy-ui-nse"/>
+                <outlet property="pointerGroupViewHorizontalConstraint" destination="IQI-0n-Iid" id="VAj-SG-aeL"/>
+                <outlet property="pointerGroupViewVerticalConstraint" destination="25a-XL-Yr8" id="gRZ-18-1wf"/>
+                <outlet property="pointerPriceLabel" destination="l5n-mf-dck" id="t7n-dw-Lh1"/>
                 <outlet property="threeMonthlyTab" destination="E5t-VZ-sxn" id="afr-sG-Knn"/>
                 <outlet property="weeklyTab" destination="LtF-te-45m" id="Q4t-JD-mXy"/>
             </connections>
             <point key="canvasLocation" x="123.2" y="97.151424287856074"/>
         </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RRI-op-0kA">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="61" y="394"/>
+        </label>
     </objects>
+    <resources>
+        <image name="bubble.middle.bottom.fill" catalog="system" width="64" height="54"/>
+        <image name="circle.fill" catalog="system" width="64" height="62"/>
+    </resources>
 </document>
