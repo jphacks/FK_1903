@@ -19,7 +19,7 @@ class HomeViewController: UIViewController{
         let itemViewControllerStoryboard = UIStoryboard(name: "ItemViewController", bundle: nil)
         let itemViewController = itemViewControllerStoryboard.instantiateInitialViewController() as! ItemViewController
         itemViewController.modalPresentationStyle = .overFullScreen
-        self.navigationController!.pushViewController(itemViewController, animated: false)
+        self.navigationController!.pushViewController(itemViewController, animated: true)
     }
     
 }
