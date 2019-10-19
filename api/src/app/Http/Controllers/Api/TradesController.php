@@ -90,7 +90,7 @@ class TradesController extends Controller
         foreach($sizeFigure as $size){
             $arr_data = [
                 'size' => $size,
-                'lowestPrice' => self::getPriveFromSize($size, $requet_obejct)
+                'lowestPrice' => self::getPriceFromSize($size, $requet_obejct)
             ];
             $response_arr[] = $arr_data;
         }
@@ -98,7 +98,7 @@ class TradesController extends Controller
         return $response_arr;
     }
 
-    private function getPriveFromSize($size, $requet_obejct)
+    private function getPriceFromSize($size, $requet_obejct)
     {
         if($size == 0){
             $lowestPrice = $requet_obejct[0]->lowestPrice;
