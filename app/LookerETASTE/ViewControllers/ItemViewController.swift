@@ -11,7 +11,6 @@ import UIKit
 
 class ItemViewController: UIViewController{
     
-    
     @IBOutlet weak var buyPriceLabel: UILabel!
     @IBOutlet weak var sellPriceLabel: UILabel!
     
@@ -23,18 +22,17 @@ class ItemViewController: UIViewController{
         
         self.title = "Item"
         
-        callxib()
+//        callxib()
     
     }
     
-    
-    func callxib(){
-
-        let nib = UINib(nibName: "ItemInfoView", bundle: nil)
-        //let itemInfoView = nib.instantiate(withOwner: nil, options: nil)[0] as! ItemInfoView
-        //view.addSubview(itemInfoView)
-
-    }
+//    func callxib(){
+//
+//        let nib = UINib(nibName: "ItemInfoCell", bundle: nil)
+//        let itemInfoCell = nib.instantiate(withOwner: self, options: nil).first as! ItemInfoCell
+//        view.addSubview(itemInfoCell)
+//
+//    }
     
     
     @IBAction func toSellViewButton(_ sender: Any) {
