@@ -17,22 +17,22 @@ class ItemViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //テスト用で適当値段
         buyPriceLabel.text = "¥10,000"
         sellPriceLabel.text = "¥10,000"
         
         self.title = "Item"
         
-//        callxib()
+        
+        let itemXibView = ItemInfoCell(frame: CGRect(x: 20, y: 200, width: 375, height: 631))
+        
+        //itemLabelテスト用
+        itemXibView.tradePriceLavel.text =  "¥" + "200,000"
+        itemXibView.discountPriceLabel.textColor = UIColor.red
+        
+        view.addSubview(itemXibView)
     
     }
-    
-//    func callxib(){
-//
-//        let nib = UINib(nibName: "ItemInfoCell", bundle: nil)
-//        let itemInfoCell = nib.instantiate(withOwner: self, options: nil).first as! ItemInfoCell
-//        view.addSubview(itemInfoCell)
-//
-//    }
     
     
     @IBAction func toSellViewButton(_ sender: Any) {

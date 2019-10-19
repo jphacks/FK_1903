@@ -10,6 +10,9 @@ import UIKit
 
 class ItemInfoCell: UIView {
 
+    @IBOutlet weak var tradePriceLavel: UILabel!    
+    @IBOutlet weak var discountPriceLabel: UILabel!
+    
     override init(frame: CGRect){
            super.init(frame: frame)
            loadNib()
