@@ -1,6 +1,5 @@
 ## Stub ServerとSwagger UIの使い方
 ### 起動方法
-<<<<<<< HEAD
 1. Docker内のswaggerネットワークを作成する
 ```
 docker network create swagger_link
@@ -22,7 +21,6 @@ swagger-ui      sh /usr/share/nginx/run.sh       Up      80/tcp, 0.0.0.0:8082->8
 
 ### 使い方
 #### Stub Server
-<<<<<<< HEAD
 [http://localhost:8084](http://localhost:8084)のURIでモックAPIが使える\
 
 例. GETメソッドでidが1のfoodを取得したい時\
