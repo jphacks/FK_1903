@@ -72,3 +72,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 # APIkey
 #key.plist
+*.scnassets/
