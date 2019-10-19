@@ -12,7 +12,7 @@ import UIKit
 class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
-        self.title = "Home"
+        self.title = "Looker"
     }
     
     @IBAction func ToItemViewButton(_ sender: Any) {
