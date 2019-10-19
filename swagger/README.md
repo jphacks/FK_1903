@@ -23,7 +23,7 @@ swagger-ui      sh /usr/share/nginx/run.sh       Up      80/tcp, 0.0.0.0:8082->8
 #### Stub Server
 [http://localhost:8084](http://localhost:8084)のURIでモックAPIが使える\
 
-例. GETメソッドでidが1のfoodを取得したい時\
+例. GETメソッドでidが1のsneakerを取得したい時\
 [http://localhost:8084/sneaker/1](http://localhost:8084/sneaker/1)
 ```
 {
