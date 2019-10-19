@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StockGraphView" customModule="LookerETASTE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtF-te-45m" userLabel="Weekly Tab">
+                    <rect key="frame" x="0.0" y="0.0" width="130" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="週" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-Kx-Uhb" userLabel="Title">
+                            <rect key="frame" x="56" y="16" width="18.5" height="18"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LtF-te-45m" secondAttribute="height" multiplier="13:7" id="i15-eH-uAT"/>
+                        <constraint firstItem="Drk-Kx-Uhb" firstAttribute="centerX" secondItem="LtF-te-45m" secondAttribute="centerX" id="krp-Je-Wl9"/>
+                        <constraint firstItem="Drk-Kx-Uhb" firstAttribute="centerY" secondItem="LtF-te-45m" secondAttribute="centerY" constant="-10" id="x9d-Fr-b9s"/>
+                        <constraint firstAttribute="height" constant="70" id="xSh-gF-DqI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-VZ-sxn" userLabel="Three Monthly Tab">
+                    <rect key="frame" x="270" y="0.0" width="130" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3ヶ月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsO-87-lTL" userLabel="Title">
+                            <rect key="frame" x="40.5" y="16" width="49" height="18"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="NsO-87-lTL" firstAttribute="centerY" secondItem="E5t-VZ-sxn" secondAttribute="centerY" constant="-10" id="0kx-YD-l3f"/>
+                        <constraint firstAttribute="width" secondItem="E5t-VZ-sxn" secondAttribute="height" multiplier="13:7" id="KAJ-el-QbK"/>
+                        <constraint firstAttribute="height" constant="70" id="fu9-GG-47c"/>
+                        <constraint firstItem="NsO-87-lTL" firstAttribute="centerX" secondItem="E5t-VZ-sxn" secondAttribute="centerX" id="mOy-hU-oha"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V99-Ky-sAH" userLabel="BackGroundView">
+                    <rect key="frame" x="0.0" y="40" width="400" height="460"/>
+                    <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3C-2w-xD0" customClass="LineChart" customModule="LookerETASTE" customModuleProvider="target">
+                    <rect key="frame" x="15" y="65" width="370" height="300"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="wBB-n9-Acg"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サイズ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-EB-y83" userLabel="Size Title label">
+                    <rect key="frame" x="15" y="380" width="68" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="68" id="Ase-oS-tkr"/>
+                        <constraint firstAttribute="height" constant="25" id="Io9-zy-3hp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取引価格" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsN-m7-sAO" userLabel="Deal Price Title Label">
+                    <rect key="frame" x="137" y="380" width="68" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="68" id="OyP-3V-1mj"/>
+                        <constraint firstAttribute="height" constant="25" id="lSN-Bj-AEQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htI-IE-PFE" userLabel="Date Title Label">
+                    <rect key="frame" x="309" y="380" width="68" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="UBN-tT-wOb"/>
+                        <constraint firstAttribute="width" constant="68" id="fVW-cS-Ekp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-1Q-V3A" userLabel="Monthly Tab">
+                    <rect key="frame" x="135" y="0.0" width="130" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1ヶ月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-vZ-9Cw" userLabel="Title">
+                            <rect key="frame" x="40.5" y="16" width="49" height="18"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="8LX-vZ-9Cw" firstAttribute="centerX" secondItem="G6g-1Q-V3A" secondAttribute="centerX" id="5Oq-QG-HOW"/>
+                        <constraint firstAttribute="width" secondItem="G6g-1Q-V3A" secondAttribute="height" multiplier="13:7" id="7Xr-0z-ZYf"/>
+                        <constraint firstItem="8LX-vZ-9Cw" firstAttribute="centerY" secondItem="G6g-1Q-V3A" secondAttribute="centerY" constant="-10" id="ZSL-ak-DXP"/>
+                        <constraint firstAttribute="height" constant="70" id="mCw-gX-Y3z"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="htI-IE-PFE" firstAttribute="centerY" secondItem="FIf-EB-y83" secondAttribute="centerY" id="29h-uE-pV4"/>
+                <constraint firstItem="V99-Ky-sAH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2XN-PN-s5B"/>
+                <constraint firstItem="C3C-2w-xD0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="6C8-AD-1Wu"/>
+                <constraint firstItem="LtF-te-45m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="A8D-En-xEZ"/>
+                <constraint firstItem="FIf-EB-y83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="F03-oW-3mi"/>
+                <constraint firstItem="G6g-1Q-V3A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J5G-QE-h4g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="C3C-2w-xD0" secondAttribute="trailing" constant="15" id="Kim-WK-wt6"/>
+                <constraint firstItem="IsN-m7-sAO" firstAttribute="leading" secondItem="FIf-EB-y83" secondAttribute="trailing" constant="54" id="M02-Ou-INf"/>
+                <constraint firstItem="V99-Ky-sAH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="POi-jl-pHX"/>
+                <constraint firstItem="C3C-2w-xD0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="RCD-LB-Pm9"/>
+                <constraint firstItem="IsN-m7-sAO" firstAttribute="centerY" secondItem="FIf-EB-y83" secondAttribute="centerY" id="TjT-Fc-bq4"/>
+                <constraint firstItem="LtF-te-45m" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="VBG-m7-IzN"/>
+                <constraint firstItem="G6g-1Q-V3A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="WDT-fB-4Wg"/>
+                <constraint firstItem="FIf-EB-y83" firstAttribute="top" secondItem="C3C-2w-xD0" secondAttribute="bottom" constant="15" id="Wdk-57-quE"/>
+                <constraint firstItem="V99-Ky-sAH" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eAg-qi-vtN"/>
+                <constraint firstItem="V99-Ky-sAH" firstAttribute="top" secondItem="LtF-te-45m" secondAttribute="bottom" constant="-30" id="o8g-Bq-77c"/>
+                <constraint firstItem="E5t-VZ-sxn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="t8X-Nr-DAl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="E5t-VZ-sxn" secondAttribute="trailing" id="wRZ-w9-7Za"/>
+                <constraint firstItem="htI-IE-PFE" firstAttribute="leading" secondItem="IsN-m7-sAO" secondAttribute="trailing" constant="104" id="wbV-iw-JTp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="curvedLineChart" destination="C3C-2w-xD0" id="Nlf-5T-nFC"/>
+            </connections>
+            <point key="canvasLocation" x="123.2" y="97.151424287856074"/>
+        </view>
+    </objects>
+</document>

@@ -12,7 +12,6 @@ import SceneKit
 
 class ItemViewController: UIViewController{
     
-    
     @IBOutlet weak var buyPriceLabel: UILabel!
     @IBOutlet weak var sellPriceLabel: UILabel!
     
@@ -26,10 +25,23 @@ class ItemViewController: UIViewController{
         
         self.title = "Item"
         
-        initializeSceneView()
+        //initializeSceneView()
+        initializeStockGraphView()
+    }
+    
+    @IBAction func toSellViewButton(_ sender: Any) {
+        
+        let sizeViewControllerStoryboard = UIStoryboard(name: "SizeViewController", bundle: nil)
+        let sizeViewController = sizeViewControllerStoryboard.instantiateInitialViewController() as! SizeViewController
+        sizeViewController.modalPresentationStyle = .overFullScreen
+        self.navigationController!.pushViewController(sizeViewController, animated: true)
         
     }
     
+}
+
+// 3Dビュー機能
+extension ItemViewController {
     func initializeSceneView() {
         let nib = UINib(nibName: "Viewer3D", bundle: nil)
         let viewer3D = nib.instantiate(withOwner: nil, options: nil)[0] as! Viewer3D
@@ -49,14 +61,49 @@ class ItemViewController: UIViewController{
         self.view.addSubview(viewer3D)
     }
     
-    @IBAction func toSellViewButton(_ sender: Any) {
+    @objc func panViewer3D(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .changed:
+            let deviation: CGPoint = sender.translation(in: view)
+            let rotation: CGFloat =  (CGFloat(Float.pi / 180) / 2) // オイラー角
+            node.eulerAngles = SCNVector3(CGFloat(node.eulerAngles.x) + deviation.y * rotation, CGFloat(node.eulerAngles.y) + deviation.x * rotation, 0)
+            sender.setTranslation(CGPoint(x: 0, y: 0), in: view)
+        case .ended:
+            break
+        default:
+            break
+        }
+    }
+}
+
+
+// 株価グラフ機能
+extension ItemViewController {
+    func initializeStockGraphView() {
+        let nib = UINib(nibName: "StockGraphView", bundle: nil)
+        let stockGraphView = nib.instantiate(withOwner: nil, options: nil)[0] as! StockGraphView
         
-        let sizeViewControllerStoryboard = UIStoryboard(name: "SizeViewController", bundle: nil)
-        let sizeViewController = sizeViewControllerStoryboard.instantiateInitialViewController() as! SizeViewController
-        sizeViewController.modalPresentationStyle = .overFullScreen
-        self.navigationController!.pushViewController(sizeViewController, animated: true)
+        // 決め打ちのデータ
+        let dataEntries = [PointEntry(value: 0, label: ""), PointEntry(value: 100, label: ""), PointEntry(value: 100, label: ""), PointEntry(value: 100, label: ""), PointEntry(value: 20, label: ""), PointEntry(value: 30, label: ""), PointEntry(value: 100, label: "")]
         
+        stockGraphView.curvedLineChart.dataEntries = dataEntries
+        stockGraphView.curvedLineChart.isCurved = true
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.panStockGraphView(sender:)))
+        stockGraphView.addGestureRecognizer(panGestureRecognizer)
+        
+        stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
+        self.view.addSubview(stockGraphView)
     }
     
-    
+    @objc func panStockGraphView(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .changed:
+            break
+        case .ended:
+            break
+        default:
+            break
+        }
+    }
+
 }
