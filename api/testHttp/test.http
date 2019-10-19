@@ -1,0 +1,73 @@
+@baseUrl = http://127.0.0.1:10080/api
+
+###[Sneaker-API]###
+
+GET {{baseUrl}}/sneaker HTTP/1.1
+
+###
+
+POST {{baseUrl}}/sneaker HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nameMain": "Travis Scott",
+  "nameSub": "Jordan6 Retro",
+  "image": "https://jphacks-looker.s3-ap-northeast-1.amazonaws.com/sneaker/travis.jpg",
+  "partNo": "130-X1345",
+  "colors": [
+    {
+      "name": "Bruwn"
+    },
+    {
+      "name": "Black"
+    },
+    {
+      "name": "White"
+    }
+  ],
+  "releaseDate": "2018/09/13",
+  "regularPrice": 19000
+}
+
+###
+
+GET {{baseUrl}}/sneaker/popular HTTP/1.1
+
+###
+
+GET {{baseUrl}}/sneaker/lowest HTTP/1.1
+
+###
+
+GET {{baseUrl}}/sneaker/highest HTTP/1.1
+
+###
+
+GET {{baseUrl}}/sneaker/10 HTTP/1.1
+
+###
+
+DELETE {{baseUrl}}/sneaker/1 HTTP/1.1
+
+###[Trade-API]###
+
+POST {{baseUrl}}/trade HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 1,
+  "sneakerId": 1,
+  "size": 26.5,
+  "tradePrice": 31000,
+  "tradeDate": "2019/10/20"
+}
+
+###
+
+GET {{baseUrl}}/trade/1 HTTP/1.1
+
+###
+
+GET {{baseUrl}}/trade/size/1 HTTP/1.1

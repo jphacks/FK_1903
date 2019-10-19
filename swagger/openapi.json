@@ -357,37 +357,6 @@
         }
       }
     },
-    "/trade/news": {
-      "get": {
-        "tags": [
-          "trade"
-        ],
-        "summary": "Get TradeNews.",
-        "operationId": "getTradeNews",
-        "responses": {
-          "200": {
-            "description": "Success.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TradeNews"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Failed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/bid/{sneakerId}[WIP]": {
       "get": {
         "tags": [
@@ -1282,58 +1251,6 @@
             "type": "number"
           },
           "lowestPrice": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
-      "TradeNews": {
-        "type": "object",
-        "required": [
-          "id",
-          "message"
-        ],
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "message": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SneakerIndo"
-            }
-          }
-        },
-        "example": {
-          "id": 1,
-          "message": [
-            {
-              "name": "Travis Scott",
-              "price": 18000
-            },
-            {
-              "name": "Tokyo Maze",
-              "price": 27000
-            },
-            {
-              "name": "Obsidian",
-              "price": 30000
-            }
-          ]
-        }
-      },
-      "SneakerIndo": {
-        "type": "object",
-        "required": [
-          "name",
-          "price"
-        ],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "price": {
             "type": "integer",
             "format": "int32"
           }
