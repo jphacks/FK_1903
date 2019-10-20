@@ -1,6 +1,6 @@
 # Looker
 
-[![Product Name](image/Lookerlogo.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](/image/Lookerlogo.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
 ## 製品概要
 ### Market Tech(市場テック)
