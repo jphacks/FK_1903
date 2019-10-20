@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		4F740FBF235C1ED700FAB9DD /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F740FA4235C1ED700FAB9DD /* JSONEncodingHelper.swift */; };
 		4F740FC0235C1ED700FAB9DD /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F740FA5235C1ED700FAB9DD /* Models.swift */; };
 		4F740FC1235C1ED700FAB9DD /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F740FA6235C1ED700FAB9DD /* Configuration.swift */; };
+		4F740FC3235C224400FAB9DD /* TradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F740FC2235C224400FAB9DD /* TradeModel.swift */; };
 		4FA1B9D2235BCD6000A53271 /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */; };
 		4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */; };
 		929F9CF388038340840C723D /* Pods_LookerETASTE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E06FEB5591739B5BFBFA6C0 /* Pods_LookerETASTE.framework */; };
@@ -103,6 +104,7 @@
 		4F740FA4235C1ED700FAB9DD /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
 		4F740FA5235C1ED700FAB9DD /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		4F740FA6235C1ED700FAB9DD /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		4F740FC2235C224400FAB9DD /* TradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeModel.swift; sourceTree = "<group>"; };
 		4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
 		4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemInfoCell.xib; sourceTree = "<group>"; };
 		B3F969078CF8EA23A38E5494 /* Pods-LookerETASTE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookerETASTE.release.xcconfig"; path = "Target Support Files/Pods-LookerETASTE/Pods-LookerETASTE.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +144,6 @@
 				B4734B1EB8A124B12BDB277F /* Pods-LookerETASTE.debug.xcconfig */,
 				B3F969078CF8EA23A38E5494 /* Pods-LookerETASTE.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -289,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				4F740F87235C1ED700FAB9DD /* OpenAPIClient */,
+				4F740FC2235C224400FAB9DD /* TradeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +445,7 @@
 				4F740FB6235C1ED700FAB9DD /* User.swift in Sources */,
 				4F114411235B33C400198E7C /* CGPath_Utility.swift in Sources */,
 				4F740FA9235C1ED700FAB9DD /* UserAPI.swift in Sources */,
+				4F740FC3235C224400FAB9DD /* TradeModel.swift in Sources */,
 				CBFEF3EE2359442600F0CEAC /* SizeViewController.swift in Sources */,
 				4F740FC1235C1ED700FAB9DD /* Configuration.swift in Sources */,
 				4F1143FD235AD6BD00198E7C /* Viewer3D.swift in Sources */,

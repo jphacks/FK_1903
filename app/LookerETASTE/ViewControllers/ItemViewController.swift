@@ -16,7 +16,7 @@ class ItemViewController: UIViewController{
     @IBOutlet weak var sellPriceLabel: UILabel!
     
     var node: SCNNode!
-    var dataEntries: [PointEntry] = []
+    var dataEntries: [PointEntry]!
     var stockGraphDotsPoints: [CGPoint] = []
     
     var isFrontItemInfo = true
@@ -26,7 +26,7 @@ class ItemViewController: UIViewController{
     var viewer3D: Viewer3D!
     let flipDuration = 1.0
     let fadeDuration = 1.0
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -130,8 +130,6 @@ extension ItemViewController: LineChartDelegate {
         let nib = UINib(nibName: "StockGraphView", bundle: nil)
         stockGraphView = nib.instantiate(withOwner: nil, options: nil)[0] as? StockGraphView
         stockGraphView.curvedLineChart.delegate = self
-        // 決め打ちのデータ
-        dataEntries = [PointEntry(value: 0, label: "0"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 100, label: "100"), PointEntry(value: 20, label: "20"), PointEntry(value: 30, label: "30"), PointEntry(value: 100, label: "100")]
         
         stockGraphView.pointerSetup()
         stockGraphView.curvedLineChart.dataEntries = dataEntries
@@ -205,5 +203,6 @@ extension ItemViewController: LineChartDelegate {
         stockGraphView.pointerGroupViewVerticalConstraint.constant = yTargetPos
         stockGraphView.pointerPriceLabel.text = String(dataEntries[index].value)
     }
-
 }
+
+

@@ -7,7 +7,7 @@
 import Foundation
 
 open class OpenAPIClientAPI {
-    public static var basePath = "http://localhost/"
+    public static var basePath = "https://87993c04.ngrok.io/api"
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = [:]
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
