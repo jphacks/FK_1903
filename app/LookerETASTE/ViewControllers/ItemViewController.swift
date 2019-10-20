@@ -34,11 +34,18 @@ class ItemViewController: UIViewController{
         buyPriceLabel.text = "¥10,000"
         sellPriceLabel.text = "¥10,000"
         
-        self.title = "Item"
-        
+        setNavigationBar()
         initializeItemInfoView()
         initializeSceneView()
         initializeStockGraphView()
+    }
+    
+    func setNavigationBar() {
+        self.title = "Item"
+        
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(tapAction))
+        let historyButton = UIBarButtonItem(image: UIImage(named: "History")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(tapHistory))
+        self.navigationItem.rightBarButtonItems = [shareButton, historyButton]
     }
     
     func initializeItemInfoView() {
@@ -76,6 +83,16 @@ class ItemViewController: UIViewController{
         let sizeViewController = sizeViewControllerStoryboard.instantiateInitialViewController() as! SizeViewController
         sizeViewController.modalPresentationStyle = .overFullScreen
         self.navigationController!.pushViewController(sizeViewController, animated: true)
+    }
+    
+    @objc func tapHistory() {
+        let dealViewControllerStoryboard = UIStoryboard(name: "DealViewController", bundle: nil)
+        let dealViewController = dealViewControllerStoryboard.instantiateInitialViewController() as! DealViewController
+        dealViewController.modalPresentationStyle = .overFullScreen
+        self.navigationController!.pushViewController(dealViewController, animated: true)
+    }
+    
+    @objc func tapAction() {
         
     }
     

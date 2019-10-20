@@ -68,6 +68,7 @@
 * Swagger
 * MySQL
 * Docker
+* cocoapods
 * SceneKit
 * Alamofire
 * Nginx

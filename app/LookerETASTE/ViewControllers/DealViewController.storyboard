@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uig-sD-M26">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Deal View Controller-->
+        <scene sceneID="imt-h0-Kwq">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="uig-sD-M26" customClass="DealViewController" customModule="LookerETASTE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uPg-lZ-c6l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYN-hZ-EXQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="570"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="570" id="2y9-JU-49C"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3n-zT-LDt" userLabel="Deal Button">
+                                <rect key="frame" x="87" y="54" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="dLh-hP-MUH"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tapDealTab:" destination="uig-sD-M26" eventType="touchUpInside" id="DY3-ks-BMW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kun-Np-zNw" userLabel="Exhibit Button">
+                                <rect key="frame" x="167" y="54" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="JPI-q1-C3N"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tapExhibitTab:" destination="uig-sD-M26" eventType="touchUpInside" id="Cg0-YU-8nk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNJ-Oh-CeC" userLabel="Bid Button">
+                                <rect key="frame" x="247" y="54" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="jRh-5s-Cxh"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tapBidTag:" destination="uig-sD-M26" eventType="touchUpInside" id="ZhT-Ch-xxs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AYN-hZ-EXQ" firstAttribute="top" secondItem="Suf-OO-ezv" secondAttribute="top" id="2Zg-hq-zF7"/>
+                            <constraint firstItem="Kun-Np-zNw" firstAttribute="top" secondItem="Suf-OO-ezv" secondAttribute="top" constant="10" id="9Hi-YC-J42"/>
+                            <constraint firstItem="BNJ-Oh-CeC" firstAttribute="centerY" secondItem="Kun-Np-zNw" secondAttribute="centerY" id="AHi-3N-eYv"/>
+                            <constraint firstItem="BNJ-Oh-CeC" firstAttribute="leading" secondItem="Kun-Np-zNw" secondAttribute="trailing" id="PHA-ZQ-PKf"/>
+                            <constraint firstItem="U3n-zT-LDt" firstAttribute="centerY" secondItem="Kun-Np-zNw" secondAttribute="centerY" id="cYi-WU-iA8"/>
+                            <constraint firstItem="Kun-Np-zNw" firstAttribute="centerX" secondItem="uPg-lZ-c6l" secondAttribute="centerX" id="hXw-E1-Viw"/>
+                            <constraint firstItem="Kun-Np-zNw" firstAttribute="leading" secondItem="U3n-zT-LDt" secondAttribute="trailing" id="pnc-7T-CSo"/>
+                            <constraint firstItem="AYN-hZ-EXQ" firstAttribute="leading" secondItem="Suf-OO-ezv" secondAttribute="leading" id="t3a-Da-rdj"/>
+                            <constraint firstItem="Suf-OO-ezv" firstAttribute="trailing" secondItem="AYN-hZ-EXQ" secondAttribute="trailing" id="ubE-8W-yXJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Suf-OO-ezv"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="AYN-hZ-EXQ" id="weg-sa-DOM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWO-qQ-dPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="81"/>
+        </scene>
+    </scenes>
+</document>
