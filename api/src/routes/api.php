@@ -24,3 +24,8 @@ Route::delete('/sneaker/{id}', 'Api\SneakersController@destroy');
 Route::post('/trade', 'Api\TradesController@store');
 Route::get('/trade/{id}', 'Api\TradesController@show');
 Route::get('/trade/size/{id}', 'Api\TradesController@showSize');
+
+Route::post('/user', 'Api\UsersController@store');
+Route::post('/user/login', 'Api\UsersController@login');
+Route::get('/user/logout', 'Api\UsersController@logout');
+Route::delete('/user/{id}', 'Api\UsersController@destroy');
