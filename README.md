@@ -67,7 +67,7 @@
 #### フレームワーク・ライブラリ・モジュール
 * Swift
 * PHP/Laravel
-* Swagger
+* Swagger
 * MySQL
 * Docker
 * cocoapods
