@@ -18,6 +18,8 @@
 		4F11440D235B135400198E7C /* UIColor_Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11440C235B135400198E7C /* UIColor_Utility.swift */; };
 		4F11440F235B13DA00198E7C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11440E235B13DA00198E7C /* Color.swift */; };
 		4F114411235B33C400198E7C /* CGPath_Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114410235B33C400198E7C /* CGPath_Utility.swift */; };
+		4F6FC3AD235C0F810075A8AB /* DealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FC3AC235C0F800075A8AB /* DealViewController.swift */; };
+		4F6FC3AF235C0FA00075A8AB /* DealViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FC3AE235C0FA00075A8AB /* DealViewController.storyboard */; };
 		4FA1B9D2235BCD6000A53271 /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */; };
 		4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */; };
 		CBC20B402359A3B20078F2D1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */; };
@@ -47,6 +49,8 @@
 		4F11440C235B135400198E7C /* UIColor_Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Utility.swift; sourceTree = "<group>"; };
 		4F11440E235B13DA00198E7C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4F114410235B33C400198E7C /* CGPath_Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPath_Utility.swift; sourceTree = "<group>"; };
+		4F6FC3AC235C0F800075A8AB /* DealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealViewController.swift; sourceTree = "<group>"; };
+		4F6FC3AE235C0FA00075A8AB /* DealViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DealViewController.storyboard; sourceTree = "<group>"; };
 		4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
 		4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemInfoCell.xib; sourceTree = "<group>"; };
 		CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				CBFEF3EF2359443B00F0CEAC /* SizeViewController.storyboard */,
 				CBFEF3ED2359442600F0CEAC /* SizeViewController.swift */,
 				CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */,
+				4F6FC3AC235C0F800075A8AB /* DealViewController.swift */,
+				4F6FC3AE235C0FA00075A8AB /* DealViewController.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBFEF3E22358E30200F0CEAC /* SplashViewController.storyboard in Resources */,
+				4F6FC3AF235C0FA00075A8AB /* DealViewController.storyboard in Resources */,
 				4F1143FF235AD6E800198E7C /* Viewer3D.xib in Resources */,
 				4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */,
 				CBFEF3D52358E29C00F0CEAC /* Assets.xcassets in Resources */,
@@ -259,6 +266,7 @@
 				4F11440F235B13DA00198E7C /* Color.swift in Sources */,
 				CBFEF3CE2358E29B00F0CEAC /* SceneDelegate.swift in Sources */,
 				CBFEF3E82359427600F0CEAC /* HomeViewController.swift in Sources */,
+				4F6FC3AD235C0F810075A8AB /* DealViewController.swift in Sources */,
 				CBC20B402359A3B20078F2D1 /* ActionViewController.swift in Sources */,
 				4F114406235B055300198E7C /* CurveAlgorithm.swift in Sources */,
 			);
