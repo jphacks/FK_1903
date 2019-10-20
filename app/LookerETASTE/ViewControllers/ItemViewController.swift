@@ -23,7 +23,9 @@ class ItemViewController: UIViewController{
     
     var itemXibView: ItemInfoCell!
     var stockGraphView: StockGraphView!
+    var viewer3D: Viewer3D!
     let flipDuration = 1.0
+    let fadeDuration = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,7 @@ class ItemViewController: UIViewController{
         self.title = "Item"
         
         initializeItemInfoView()
-        //initializeSceneView()
+        initializeSceneView()
         initializeStockGraphView()
     }
     
@@ -56,6 +58,15 @@ class ItemViewController: UIViewController{
             self.isFrontItemInfo.toggle()
         }
         
+        itemXibView.tappedItemImage = {
+            UIView.animate(withDuration: self.fadeDuration, delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.itemXibView.alpha = 0.05
+            })
+            UIView.animate(withDuration: self.fadeDuration, delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
+                self.viewer3D.alpha = 1
+            })
+        }
+        
         view.addSubview(itemXibView)
     }
     
@@ -74,12 +85,13 @@ class ItemViewController: UIViewController{
 extension ItemViewController {
     func initializeSceneView() {
         let nib = UINib(nibName: "Viewer3D", bundle: nil)
-        let viewer3D = nib.instantiate(withOwner: nil, options: nil)[0] as! Viewer3D
-        let scene = SCNScene(named: "SceneKit Asset Catalog.scnassets/300/shoes_one copy.scn")
+        viewer3D = nib.instantiate(withOwner: nil, options: nil)[0] as! Viewer3D
+        let scene = SCNScene(named: "SceneKit Asset Catalog.scnassets/shoe/shoes_one_center_2 copy.scn")
         viewer3D.sceneView.scene = scene
         viewer3D.sceneView.autoenablesDefaultLighting = true
-        node = (scene!.rootNode.childNode(withName: "shoes1", recursively: false))!
+        node = (scene!.rootNode.childNode(withName: "shoe1", recursively: false))!
         node.position = SCNVector3(0,0,0)
+        node.scale = SCNVector3(0.75, 0.75, 0.75)
         viewer3D.sceneView.scene!.rootNode.addChildNode(node)
         // ビュー背景透過
         viewer3D.backgroundColor = UIColor.clear
@@ -87,8 +99,9 @@ extension ItemViewController {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.panViewer3D(sender:)))
         viewer3D.addGestureRecognizer(panGestureRecognizer)
         
-        viewer3D.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
+        viewer3D.center = CGPoint(x: itemXibView.frame.origin.x + itemXibView.frame.size.width / 2, y: itemXibView.frame.origin.y + itemXibView.frame.size.height / 2)
         self.view.addSubview(viewer3D)
+        viewer3D.alpha = 0
     }
     
     @objc func panViewer3D(sender: UIPanGestureRecognizer) {
@@ -146,7 +159,6 @@ extension ItemViewController: LineChartDelegate {
         }
         
         stockGraphView.tabsSetup()
-        //stockGraphView.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2) // とりあえず中心に
         stockGraphView.center = CGPoint(x: itemXibView.frame.origin.x + itemXibView.frame.size.width / 2, y: itemXibView.frame.origin.y + itemXibView.frame.size.height / 2)
         self.view.addSubview(stockGraphView)
         self.view.bringSubviewToFront(stockGraphView.line)

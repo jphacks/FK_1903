@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemInfoCell" customModule="LookerETASTE" customModuleProvider="target">
             <connections>
                 <outlet property="discountPriceLabel" destination="2cj-PL-0b9" id="gAE-4Y-cLX"/>
+                <outlet property="itemImage" destination="SDO-qy-pEU" id="GTu-vI-Lnw"/>
                 <outlet property="tradePriceLavel" destination="Y2e-ju-9r6" id="ZzI-hH-1Fg"/>
             </connections>
         </placeholder>
@@ -116,10 +117,30 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample2" translatesAutoresizingMaskIntoConstraints="NO" id="SDO-qy-pEU">
-                    <rect key="frame" x="20" y="2" width="335" height="425"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Demo Shoe Card" translatesAutoresizingMaskIntoConstraints="NO" id="KlW-ub-526">
+                    <rect key="frame" x="46" y="44" width="271" height="336"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Demo Shoe" translatesAutoresizingMaskIntoConstraints="NO" id="SDO-qy-pEU" userLabel="Shoe Image">
+                    <rect key="frame" x="70" y="100" width="300" height="295"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYi-at-UEk" userLabel="Shoe Name Label">
+                    <rect key="frame" x="65" y="60" width="214" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <string key="text">Air Max 1 Atmos 
+Animal Pack 2.0 
+(2018 All Black Box)</string>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-RK-Qui">
                     <rect key="frame" x="320" y="577" width="57" height="57"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -129,12 +150,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥100,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2e-ju-9r6">
-                    <rect key="frame" x="106" y="440" width="168" height="36"/>
+                    <rect key="frame" x="106" y="439" width="168" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WZ-kI-rql" userLabel="Item Image Button">
+                    <rect key="frame" x="0.0" y="44" width="363" height="383"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="tapItemImage:" destination="-1" eventType="touchUpInside" id="obc-rL-3QH"/>
+                    </connections>
+                </button>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -153,7 +181,8 @@
         </view>
     </objects>
     <resources>
-        <image name="sample2" width="858" height="892"/>
+        <image name="Demo Shoe" width="1134" height="954"/>
+        <image name="Demo Shoe Card" width="375" height="485"/>
         <image name="yajirushi" width="57" height="57"/>
     </resources>
 </document>
