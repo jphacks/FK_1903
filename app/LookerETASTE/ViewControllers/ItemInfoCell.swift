@@ -10,8 +10,12 @@ import UIKit
 
 class ItemInfoCell: UIView {
 
-    @IBOutlet weak var tradePriceLavel: UILabel!    
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var tradePriceLavel: UILabel!
     @IBOutlet weak var discountPriceLabel: UILabel!
+    
+    var tappedFlipButton: (() -> ())?
+    var tappedItemImage: (() -> ())?
     
     override init(frame: CGRect){
            super.init(frame: frame)
@@ -29,6 +33,12 @@ class ItemInfoCell: UIView {
            self.addSubview(view)
        }
 
+    @IBAction func tapFlipButton(_ sender: UIButton) {
+        tappedFlipButton?()
+    }
+    @IBAction func tapItemImage(_ sender: UIButton) {
+        tappedItemImage?()
+    }
 }
 
 extension UIView {

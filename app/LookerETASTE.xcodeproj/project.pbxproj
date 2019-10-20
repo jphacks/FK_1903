@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB2B4634235B51FB00AF86AD /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */; };
-		CB2B4636235B521700AF86AD /* ItemInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2B4635235B521700AF86AD /* ItemInfoCell.xib */; };
+		4F1143FA235ACF5B00198E7C /* SceneKit Asset Catalog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1143F9235ACF5B00198E7C /* SceneKit Asset Catalog.scnassets */; };
+		4F1143FD235AD6BD00198E7C /* Viewer3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1143FC235AD6BD00198E7C /* Viewer3D.swift */; };
+		4F1143FF235AD6E800198E7C /* Viewer3D.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1143FE235AD6E800198E7C /* Viewer3D.xib */; };
+		4F114402235B045600198E7C /* StockGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114401235B045600198E7C /* StockGraphView.swift */; };
+		4F114404235B046600198E7C /* StockGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F114403235B046600198E7C /* StockGraphView.xib */; };
+		4F114406235B055300198E7C /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114405235B055300198E7C /* CurveAlgorithm.swift */; };
+		4F114408235B079000198E7C /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114407235B079000198E7C /* LineChart.swift */; };
+		4F11440A235B07A900198E7C /* DotCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114409235B07A900198E7C /* DotCALayer.swift */; };
+		4F11440D235B135400198E7C /* UIColor_Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11440C235B135400198E7C /* UIColor_Utility.swift */; };
+		4F11440F235B13DA00198E7C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11440E235B13DA00198E7C /* Color.swift */; };
+		4F114411235B33C400198E7C /* CGPath_Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F114410235B33C400198E7C /* CGPath_Utility.swift */; };
+		4FA1B9D2235BCD6000A53271 /* ItemInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */; };
+		4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */; };
 		CBC20B402359A3B20078F2D1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */; };
 		CBFEF3CC2358E29B00F0CEAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */; };
 		CBFEF3CE2358E29B00F0CEAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEF3CD2358E29B00F0CEAC /* SceneDelegate.swift */; };
@@ -24,8 +35,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
-		CB2B4635235B521700AF86AD /* ItemInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemInfoCell.xib; sourceTree = "<group>"; };
+		4F1143F9235ACF5B00198E7C /* SceneKit Asset Catalog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = "SceneKit Asset Catalog.scnassets"; sourceTree = "<group>"; };
+		4F1143FC235AD6BD00198E7C /* Viewer3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Viewer3D.swift; path = LookerETASTE/Viewer3D.swift; sourceTree = SOURCE_ROOT; };
+		4F1143FE235AD6E800198E7C /* Viewer3D.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Viewer3D.xib; sourceTree = "<group>"; };
+		4F114401235B045600198E7C /* StockGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockGraphView.swift; sourceTree = "<group>"; };
+		4F114403235B046600198E7C /* StockGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockGraphView.xib; sourceTree = "<group>"; };
+		4F114405235B055300198E7C /* CurveAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
+		4F114407235B079000198E7C /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		4F114409235B07A900198E7C /* DotCALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotCALayer.swift; sourceTree = "<group>"; };
+		4F11440C235B135400198E7C /* UIColor_Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Utility.swift; sourceTree = "<group>"; };
+		4F11440E235B13DA00198E7C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4F114410235B33C400198E7C /* CGPath_Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPath_Utility.swift; sourceTree = "<group>"; };
+		4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoCell.swift; sourceTree = "<group>"; };
+		4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemInfoCell.xib; sourceTree = "<group>"; };
 		CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		CBFEF3C82358E29B00F0CEAC /* LookerETASTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookerETASTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +75,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F1143FB235AD6AA00198E7C /* Viewer3D */ = {
+			isa = PBXGroup;
+			children = (
+				4F1143FC235AD6BD00198E7C /* Viewer3D.swift */,
+				4F1143FE235AD6E800198E7C /* Viewer3D.xib */,
+			);
+			path = Viewer3D;
+			sourceTree = "<group>";
+		};
+		4F114400235B03E400198E7C /* StockGraphViews */ = {
+			isa = PBXGroup;
+			children = (
+				4F114407235B079000198E7C /* LineChart.swift */,
+				4F114405235B055300198E7C /* CurveAlgorithm.swift */,
+				4F114409235B07A900198E7C /* DotCALayer.swift */,
+				4F114401235B045600198E7C /* StockGraphView.swift */,
+				4F114403235B046600198E7C /* StockGraphView.xib */,
+			);
+			path = StockGraphViews;
+			sourceTree = "<group>";
+		};
+		4F11440B235B133D00198E7C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4F11440C235B135400198E7C /* UIColor_Utility.swift */,
+				4F11440E235B13DA00198E7C /* Color.swift */,
+				4F114410235B33C400198E7C /* CGPath_Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		CBFEF3BF2358E29B00F0CEAC = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +125,14 @@
 		CBFEF3CA2358E29B00F0CEAC /* LookerETASTE */ = {
 			isa = PBXGroup;
 			children = (
+				4F11440B235B133D00198E7C /* Utility */,
 				CBFEF3DF2358E2C900F0CEAC /* Models */,
 				CBFEF3E02358E2D100F0CEAC /* ViewControllers */,
 				CBFEF3CB2358E29B00F0CEAC /* AppDelegate.swift */,
 				CBFEF3CD2358E29B00F0CEAC /* SceneDelegate.swift */,
 				CBFEF3D42358E29C00F0CEAC /* Assets.xcassets */,
 				CBFEF3D92358E29C00F0CEAC /* Info.plist */,
+				4F1143F9235ACF5B00198E7C /* SceneKit Asset Catalog.scnassets */,
 			);
 			path = LookerETASTE;
 			sourceTree = "<group>";
@@ -92,6 +147,10 @@
 		CBFEF3E02358E2D100F0CEAC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4F114400235B03E400198E7C /* StockGraphViews */,
+				4F1143FB235AD6AA00198E7C /* Viewer3D */,
+				4FA1B9D0235BCD5F00A53271 /* ItemInfoCell.swift */,
+				4FA1B9D1235BCD6000A53271 /* ItemInfoCell.xib */,
 				CBFEF3E12358E30200F0CEAC /* SplashViewController.storyboard */,
 				CBFEF3E32358E31400F0CEAC /* SplashViewController.swift */,
 				CBFEF3E52359424E00F0CEAC /* HomeViewController.storyboard */,
@@ -101,8 +160,6 @@
 				CBFEF3EF2359443B00F0CEAC /* SizeViewController.storyboard */,
 				CBFEF3ED2359442600F0CEAC /* SizeViewController.swift */,
 				CBC20B3F2359A3B20078F2D1 /* ActionViewController.swift */,
-				CB2B4633235B51FB00AF86AD /* ItemInfoCell.swift */,
-				CB2B4635235B521700AF86AD /* ItemInfoCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,8 +223,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBFEF3E22358E30200F0CEAC /* SplashViewController.storyboard in Resources */,
+				4F1143FF235AD6E800198E7C /* Viewer3D.xib in Resources */,
+				4FA1B9D3235BCD6000A53271 /* ItemInfoCell.xib in Resources */,
 				CBFEF3D52358E29C00F0CEAC /* Assets.xcassets in Resources */,
-				CB2B4636235B521700AF86AD /* ItemInfoCell.xib in Resources */,
+				4F1143FA235ACF5B00198E7C /* SceneKit Asset Catalog.scnassets in Resources */,
+				4F114404235B046600198E7C /* StockGraphView.xib in Resources */,
 				CBFEF3F02359443B00F0CEAC /* SizeViewController.storyboard in Resources */,
 				CBFEF3EC2359430E00F0CEAC /* ItemViewController.storyboard in Resources */,
 				CBFEF3E62359424E00F0CEAC /* HomeViewController.storyboard in Resources */,
@@ -181,14 +241,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB2B4634235B51FB00AF86AD /* ItemInfoCell.swift in Sources */,
+				4F11440D235B135400198E7C /* UIColor_Utility.swift in Sources */,
 				CBFEF3E42358E31400F0CEAC /* SplashViewController.swift in Sources */,
+				4F114411235B33C400198E7C /* CGPath_Utility.swift in Sources */,
 				CBFEF3EE2359442600F0CEAC /* SizeViewController.swift in Sources */,
+				4F1143FD235AD6BD00198E7C /* Viewer3D.swift in Sources */,
 				CBFEF3CC2358E29B00F0CEAC /* AppDelegate.swift in Sources */,
+				4F114408235B079000198E7C /* LineChart.swift in Sources */,
 				CBFEF3EA235942FE00F0CEAC /* ItemViewController.swift in Sources */,
+				4FA1B9D2235BCD6000A53271 /* ItemInfoCell.swift in Sources */,
+				4F114402235B045600198E7C /* StockGraphView.swift in Sources */,
+				4F11440A235B07A900198E7C /* DotCALayer.swift in Sources */,
+				4F11440F235B13DA00198E7C /* Color.swift in Sources */,
 				CBFEF3CE2358E29B00F0CEAC /* SceneDelegate.swift in Sources */,
 				CBFEF3E82359427600F0CEAC /* HomeViewController.swift in Sources */,
 				CBC20B402359A3B20078F2D1 /* ActionViewController.swift in Sources */,
+				4F114406235B055300198E7C /* CurveAlgorithm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +381,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H77536R8V;
 				INFOPLIST_FILE = LookerETASTE/Info.plist;
@@ -322,6 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.looker.LookerETASTE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -331,6 +402,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H77536R8V;
 				INFOPLIST_FILE = LookerETASTE/Info.plist;
@@ -340,6 +413,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.looker.LookerETASTE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
