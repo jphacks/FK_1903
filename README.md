@@ -18,6 +18,10 @@
 ### 製品説明（具体的な製品の説明）
 モノの市場価値を株化し、売買するプラットフォームを提供するアプリケーションです。
 
+ビジネスモデルは下図のようになっています。
+
+![model](/images/model.jpg)
+
 既存事業(C2Cの売買プラットフォーム)との比較は下図のようになっています。
 
 ![compare](/images/compare.png)
@@ -78,7 +82,7 @@
 #### フレームワーク・ライブラリ・モジュール
 - Swift
 - PHP/Laravel
-- Swagger
+- OpenAPI(Swagger)
 - MySQL
 - Docker
 - cocoapods
@@ -98,6 +102,7 @@
 ### 独自開発技術（Hack Dayで開発したもの）
 #### 2日間に開発した独自の機能・技術
 - すべて
-    - iOSアプリ
-    - APIサーバ
+    - iOSアプリ開発
+    - APIサーバ開発
+    - OpenAPI(SWagger)を用いたスキーマ駆動開発
     - 3Dモデリング 
