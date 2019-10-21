@@ -393,8 +393,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development: Kota Yamashita (YAMKA4VW8D)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development: Kota Yamashita (YAMKA4VW8D)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KH3ZP65MX;
 				INFOPLIST_FILE = LookerETASTE/Info.plist;
@@ -414,8 +414,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development: Kota Yamashita (YAMKA4VW8D)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development: Kota Yamashita (YAMKA4VW8D)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KH3ZP65MX;
 				INFOPLIST_FILE = LookerETASTE/Info.plist;
